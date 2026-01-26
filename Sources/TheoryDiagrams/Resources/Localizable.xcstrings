@@ -1,0 +1,78 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "accidental_selection_error" : {
+      "comment" : "Error shown when user tries to select an invalid accidental",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can't select double sharped/flattened Note as root"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "You can't select double sharped/flattened Note as root"
+          }
+        }
+      }
+    },
+    "degrees" : {
+      "comment" : "Musical scale degrees label",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scale Degrees"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Scale Degrees"
+          }
+        }
+      }
+    },
+    "parallel_mode_chords" : {
+      "comment" : "Section title for chords in parallel modes",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parallel Mode Chords"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Parallel Mode Chords"
+          }
+        }
+      }
+    },
+    "relative_mode_chords" : {
+      "comment" : "Section title for chords in relative modes",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relative Mode Chords"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Relative Mode Chords"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
