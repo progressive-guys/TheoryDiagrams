@@ -10,7 +10,7 @@ let package = Package(
   ],
   dependencies: [
     .package(url: "https://github.com/modality-lab/SwiftMusicTheory.git", branch: "main"),
-    .package(url: "https://github.com/modality-lab/ModalityCore.git", branch: "main"),
+    .package(url: "https://github.com/modality-lab/ModalityCore.git", branch: "master"),
     .package(url: "https://github.com/exyte/PopupView.git", from: "3.0.0"),
     .package(url: "https://github.com/johnpatrickmorgan/NavigationBackport.git", from: "0.9.0"),
   ],
