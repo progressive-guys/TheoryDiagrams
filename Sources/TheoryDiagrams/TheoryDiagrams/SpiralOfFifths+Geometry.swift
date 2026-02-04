@@ -20,7 +20,7 @@ extension SpiralOfFifths {
       let center: CGFloat = 0.5
       
       self.degreesInnerRadius = 0.08
-      self.degreesHeight = 0.04
+      self.degreesHeight = 0.05
       
       self.notesInnerRadius = degreesInnerRadius + degreesHeight
       self.notesHeight = 0.08

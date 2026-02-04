@@ -6,14 +6,18 @@ import SwiftMusicTheory
 import PopupView
 
 public struct SpiralOfFifthsView: View {
-  
+
+  private static let referenceSize: CGFloat = 500
+
   @ObservedObject
   var spiralOfFifths: SpiralOfFifths
-  
+
+  @State private var fontScale: CGFloat = 1.0
+
   public init(spiralOfFifths: SpiralOfFifths) {
     self.spiralOfFifths = spiralOfFifths
   }
-  
+
   public var body: some View {
     ZStack {
       placeholders
@@ -21,9 +25,12 @@ public struct SpiralOfFifthsView: View {
       notesRing
       parallelModesRings
       relativeModesRing
-      
+
       CursorView(cursor: spiralOfFifths.cursor)
         .animation(.wedge, value: spiralOfFifths.cursor)
+    }
+    .observeSize { size in
+      fontScale = min(size.width, size.height) / Self.referenceSize
     }
     .popup(isPresented: $spiralOfFifths.isNoteSelectionFloaterPresented) {
       Text(SpiralOfFifthsStrings.accidentalSelectionError)
@@ -47,41 +54,40 @@ public struct SpiralOfFifthsView: View {
   fileprivate var placeholders: some View {
     if spiralOfFifths.sizeClass == .regular {
       GeometryReader { geometry in
-        let minDemension = min(geometry.size.width, geometry.size.height)
+        let minDimension = min(geometry.size.width, geometry.size.height)
         ForEach(spiralOfFifths.placeholders) { placeholder in
           Circle()
             .stroke(lineWidth: 1)
             .fill(placeholder.color)
-            .frame(width: minDemension * placeholder.radius * 2)
+            .frame(width: minDimension * placeholder.radius * 2)
             .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
         }
       }
     }
   }
-  
+
   private var degreesRing: some View {
-    RingView(ring: spiralOfFifths.degreesRing)
+    RingView(ring: spiralOfFifths.degreesRing(fontScale: fontScale))
   }
-  
+
   private var notesRing: some View {
-    RingView<Note>(ring: spiralOfFifths.notesRing) {
+    RingView<Note>(ring: spiralOfFifths.notesRing(fontScale: fontScale)) {
       spiralOfFifths.rootSelected($0.content.containing)
     }
   }
-  
+
   private var relativeModesRing: some View {
-    RingView(ring: spiralOfFifths.relativeModesRing) {
+    RingView(ring: spiralOfFifths.relativeModesRing(fontScale: fontScale)) {
       spiralOfFifths.relativeModeSelected($0.content.containing)
     }
   }
-  
+
   private var parallelModesRings: some View {
-    ForEach(spiralOfFifths.parallelModesRings) { modeRing in
+    ForEach(spiralOfFifths.parallelModesRings(fontScale: fontScale)) { modeRing in
       RingView(ring: modeRing) {
         spiralOfFifths.parallelModeSelected($0.content.containing)
       }
       .animation(.smooth, value: modeRing.innerRadius)
-      //      .transition(.scaleAndFade)
     }
   }
 }

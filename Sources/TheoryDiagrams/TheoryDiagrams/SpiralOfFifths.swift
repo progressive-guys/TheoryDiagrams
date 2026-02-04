@@ -39,6 +39,18 @@ public final class SpiralOfFifths: ObservableObject {
       geometry = Geometry(modesCount: mainScale.degrees.count, sizeClass: sizeClass)
     }
   }
+
+  private func scaledDegreesFont(_ fontScale: CGFloat) -> Font {
+    .system(size: max(6, 9 * fontScale), weight: .heavy)
+  }
+
+  private func scaledNotesFont(_ fontScale: CGFloat) -> Font {
+    .system(size: max(8, 16 * fontScale), weight: .black)
+  }
+
+  private func scaledModesFont(_ fontScale: CGFloat) -> Font {
+    .system(size: max(6, 10 * fontScale), weight: .bold)
+  }
   
   public lazy var colors = NoteColors(spiral: notesSpiral)
   
@@ -128,15 +140,15 @@ public final class SpiralOfFifths: ObservableObject {
     )
   }
 
-  public var degreesRing: Ring<String> {
-    Ring(
+  public func degreesRing(fontScale: CGFloat) -> Ring<String> {
+    return Ring(
       id: "degreesRing",
       wedges: relativeModes
         .compactMap { relativeMode -> Ring<String>.Wedge? in
           let degree = self.currentMode.degree(under: relativeMode.root)!
           let angle = angles[relativeMode.root]!
           let index = allNotes.firstIndex(of: relativeMode.root)!
-          
+
           return Ring<String>.Wedge(
             id: "degree \(degree.function.number)",
             color: colors[relativeMode.root],
@@ -145,7 +157,7 @@ public final class SpiralOfFifths: ObservableObject {
             content: Ring<String>.Wedge.Content(
               type: .label,
               containing: degree.functionTitle,
-              font: .system(size: 10, weight: .heavy),
+              font: scaledDegreesFont(fontScale),
               text: degree.functionTitle
             )
           )
@@ -158,7 +170,7 @@ public final class SpiralOfFifths: ObservableObject {
     )
   }
   
-  public var notesRing: Ring<Note> {
+  public func notesRing(fontScale: CGFloat) -> Ring<Note> {
     let displayedNotes = displayedNotes
     return Ring(
       id: "notesRing",
@@ -174,7 +186,7 @@ public final class SpiralOfFifths: ObservableObject {
           content: Ring<Note>.Wedge.Content(
             type: .label,
             containing: note,
-            font: .SoFNotesFont,
+            font: scaledNotesFont(fontScale),
             text: note.notation
           )
         )
@@ -187,14 +199,14 @@ public final class SpiralOfFifths: ObservableObject {
     )
   }
 
-  public var parallelModesRings: [Ring<Mode>] {
+  public func parallelModesRings(fontScale: CGFloat) -> [Ring<Mode>] {
     let modesCount = modesCount
-    
+
     return parallelModes
       .enumerated()
       .map { (modeIndex, parallelMode) in
         let modeIndex = (modeIndex - selectedModeIndex + modesCount) % modesCount
-        
+
         return Ring(
           id: "Parallel Ring \(parallelMode.shortName)",
           wedges: [
@@ -206,7 +218,7 @@ public final class SpiralOfFifths: ObservableObject {
               content: .init(
                 type: .circularLabel,
                 containing: parallelMode,
-                font: .modesFont,
+                font: scaledModesFont(fontScale),
                 text: parallelMode.shortName
               )
             )
@@ -220,7 +232,7 @@ public final class SpiralOfFifths: ObservableObject {
       }
   }
 
-  public var relativeModesRing: Ring<Mode> {
+  public func relativeModesRing(fontScale: CGFloat) -> Ring<Mode> {
     Ring(
       id: "relativeModesRing",
       wedges: relativeModes.compactMap { mode in
@@ -232,7 +244,7 @@ public final class SpiralOfFifths: ObservableObject {
           content: .init(
             type: .circularLabel,
             containing: mode,
-            font: .modesFont,
+            font: scaledModesFont(fontScale),
             text: mode.shortName
           )
         )
