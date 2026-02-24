@@ -1,12 +1,19 @@
-# SpiralOfFifths
+# TheoryDiagrams
 
 A SwiftUI library for interactive music theory diagrams, including the Spiral of Fifths visualization, chord tables, mode formula diagrams, and scale degree diagrams.
 
 ## Features
 
 - **SpiralOfFifthsView**: Interactive circular/spiral visualization of the circle of fifths with support for different scales and modes
+
+
+|           Diatonic           |           Harmonic major           |
+| :--------------------------: | :--------------------------------: |
+| ![](./Docs/SoF_diatonic.png) | ![](./Docs/SoF_harmonic_Major.png) |
+
 - **ModesTableView**: Table view showing chord relationships and modes
-- **ModeFormulaDiagramView**: Visual diagram of mode formulas
+![](./Docs/modes_table.png)
+
 - **DegreesDiagramView**: Scale degree visualization
 
 
@@ -26,7 +33,7 @@ Add to your `Package.swift`:
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/modality-lab/SpiralOfFifths.git", from: "1.0.0"),
+  .package(url: "https://github.com/modality-lab/TheoryDiagrams.git", from: "1.0.0"),
 ]
 ```
 
@@ -36,7 +43,7 @@ Then add to your target:
 .target(
   name: "YourTarget",
   dependencies: [
-    .product(name: "SpiralOfFifths", package: "SpiralOfFifths"),
+    .product(name: "TheoryDiagrams", package: "TheoryDiagrams"),
   ]
 )
 ```
@@ -88,8 +95,3 @@ The `Example/` folder contains a full demo application showcasing all diagram co
 - [SwiftMusicTheory](https://github.com/modality-lab/SwiftMusicTheory) - Music theory primitives
 - [ModalityCore](https://github.com/modality-lab/ModalityCore) - Core utilities and design components
 - [PopupView](https://github.com/exyte/PopupView) - Popup presentations
-- [NavigationBackport](https://github.com/johnpatrickmorgan/NavigationBackport) - Navigation API backport
-
-## License
-
-MIT License

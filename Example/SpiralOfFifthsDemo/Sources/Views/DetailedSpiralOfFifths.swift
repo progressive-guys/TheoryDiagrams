@@ -2,7 +2,6 @@ import SwiftUI
 import Combine
 import SwiftMusicTheory
 import TheoryDiagrams
-import NavigationBackport
 import ModalityCore
 import ModalityDesign
 
