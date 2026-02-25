@@ -14,10 +14,6 @@ A SwiftUI library for interactive music theory diagrams, including the Spiral of
 - **ModesTableView**: Table view showing chord relationships and modes
 ![](./Docs/modes_table.png)
 
-- **DegreesDiagramView**: Scale degree visualization
-
-
-
 ## Requirements
 
 - iOS 16.0+

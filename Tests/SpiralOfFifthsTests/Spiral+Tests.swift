@@ -27,16 +27,4 @@ final class SpiralTests {
 
     #expect(spiralOfFifths.projection(from: startIndex) == answer)
   }
-
-//  @Test
-//  func spiralProjection() async throws {
-//    let startIndex = spiralOfFifths.elements.firstIndex(of: .c)!
-//    let turn = startIndex / spiralOfFifths.spiralTurnLength
-//
-//    let answer: [Note] = [
-//      .c, .g, .d, .a, .e, .b, .f.sharp(), .c.sharp(), .g.sharp(), .d.sharp(), .a.sharp(), .f
-//    ]
-//
-//    #expect(spiralOfFifths.projection(from: startIndex) == answer)
-//  }
 }

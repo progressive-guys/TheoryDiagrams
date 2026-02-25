@@ -35,9 +35,5 @@ final class SpiralOfFifthsTests {
       #expect(cof.displayedNotes.shifted(by: cof.offsetToCenter) == [.c, .g, .d, .a, .e, .b, .g.flat(), .d.flat(), .a.flat(), .e.flat(), .b.flat(), .f])
     }
 
-    @Test
-    func testRelativeModes() {
-      
-    }
   }
 }

@@ -30,7 +30,7 @@ final class SoFOnboarding {
       )
     },
     innerRadius: 0.2,
-    heigth: 0.1
+    height: 0.1
   )
   
   lazy var accidentalsPattern = AccidentalsPattern(noteColors: noteColors)
@@ -51,7 +51,7 @@ final class SoFOnboarding {
       )
     },
     innerRadius: 0.2,
-    heigth: 0.1
+    height: 0.1
   )
 
   lazy var spiralEnharmonicsSelectedIndex = spiralSequence.firstIndex(of: Note.f.sharp()) ?? 0
@@ -74,7 +74,7 @@ final class SoFOnboarding {
       )
     },
     innerRadius: 0.2,
-    heigth: 0.1
+    height: 0.1
   )
   
   lazy var eSequence = Note.e.sequence(length: 12)
@@ -95,7 +95,7 @@ final class SoFOnboarding {
       )
     },
     innerRadius: 0.3,
-    heigth: 0.15
+    height: 0.15
   )
   
   lazy var aSharpMajor = Mode(root: .a.sharp(), scale: .diatonic)
@@ -113,7 +113,7 @@ final class SoFOnboarding {
       )
     },
     innerRadius: 0.2,
-    heigth: 0.1
+    height: 0.1
   )
   
   lazy var modeFormulaDiagram = ModeFormulaDiagram(

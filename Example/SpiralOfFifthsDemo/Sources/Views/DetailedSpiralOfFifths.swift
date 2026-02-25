@@ -9,13 +9,11 @@ import ModalityDesign
 public final class DetailedSpiralOfFifths: ObservableObject {
   @Published public var spiralOfFifths: SpiralOfFifths
   public let modesTable: ModesTable
-  public let degreesDiagram: DegreesDiagram
-  
+
   public init(initialMode: Mode, notesSpiral: Spiral<Note>) {
     let spiralOfFifths = SpiralOfFifths(notesSpiral: notesSpiral, initialMode: initialMode)
     self.spiralOfFifths = spiralOfFifths
     self.modesTable = ModesTable(spiralOfFifths: spiralOfFifths)
-    self.degreesDiagram = DegreesDiagram(spiralOfFifths: spiralOfFifths)
   }
 }
 
@@ -36,7 +34,7 @@ public struct DetailedSpiralOfFifthsView: View {
   private var infoButton: some View {
     WindowOpenableButton(
       windowTitle: "Spiral of Fifths Info",
-      windowId: .spiralOfFifthsInfo
+      windowId: WindowID(rawValue: "SoFInfo")
     ) {
       Image(systemName: "info.circle")
         .resizable()
@@ -122,7 +120,6 @@ public struct DetailedSpiralOfFifthsView: View {
         Spacer()
       }
       
-      DegreesDiagramView(degreesDiagram: viewModel.degreesDiagram)
     }
     .padding(.vertical, 16)
     .onAppear { viewModel.spiralOfFifths.sizeClass = sizeClass ?? .regular }

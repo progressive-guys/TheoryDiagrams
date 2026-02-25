@@ -163,7 +163,7 @@ public final class SpiralOfFifths: ObservableObject {
           )
         },
       innerRadius: geometry.degreesInnerRadius,
-      heigth: geometry.degreesHeight,
+      height: geometry.degreesHeight,
       yShift: geometry.yShift,
       scale: geometry.scale,
       aspectRatio: geometry.aspectRatio
@@ -192,7 +192,7 @@ public final class SpiralOfFifths: ObservableObject {
         )
       },
       innerRadius: geometry.notesInnerRadius,
-      heigth: geometry.notesHeight,
+      height: geometry.notesHeight,
       yShift: geometry.yShift,
       scale: geometry.scale,
       aspectRatio: geometry.aspectRatio
@@ -224,7 +224,7 @@ public final class SpiralOfFifths: ObservableObject {
             )
           ],
           innerRadius: geometry.modeInnerRadius(at: modeIndex),
-          heigth: geometry.modesWedgesHeight,
+          height: geometry.modesWedgesHeight,
           yShift: geometry.yShift,
           scale: geometry.scale,
           aspectRatio: geometry.aspectRatio
@@ -250,7 +250,7 @@ public final class SpiralOfFifths: ObservableObject {
         )
       },
       innerRadius: geometry.modeInnerRadius(at: 0),
-      heigth: geometry.modesWedgesHeight,
+      height: geometry.modesWedgesHeight,
       yShift: geometry.yShift,
       scale: geometry.scale,
       aspectRatio: geometry.aspectRatio
@@ -337,8 +337,6 @@ public final class SpiralOfFifths: ObservableObject {
       }
     }()
     let result = pathFix + centerFix - compactSizeClassFix - foldingFix
-
-//    print("spiralFolded: \(spiralFolded), wedgesWidth: \(Int(wedgesWidth.degrees)), foldingFix: \(Int(foldingFix.degrees)), offsetToCenter: \(offsetToCenter), centerFix: \(Int(centerFix.degrees)), result: \(Int(result.degrees))")
     return result
   }
 
