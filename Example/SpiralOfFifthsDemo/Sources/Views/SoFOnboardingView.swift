@@ -16,20 +16,24 @@ public struct SoFOnboardingView: View {
   }
   
   public var body: some View {
+    scrollView
+  }
+  
+  private var scrollView: some View {
     ScrollView(showsIndicators: false) {
       LazyVStack(alignment: .leading, spacing: 0) {
         Markdown(SpiralOfFifthsAppStrings.intro)
         notesView(for: onboarding.cSequence)
           .componentPaddings
-
+        
         Markdown(SpiralOfFifthsAppStrings.movingInFourths)
         notesView(for: onboarding.cSequenceBackwards)
           .componentPaddings
         Markdown(SpiralOfFifthsAppStrings.combiningSequences)
-
+        
         notesGradientView(for: onboarding.fullSequence)
           .componentPaddings
-
+        
         Markdown(SpiralOfFifthsAppStrings.identifyingPatterns)
         HStack {
           Spacer(minLength: 0)
@@ -37,13 +41,13 @@ public struct SoFOnboardingView: View {
             .frame(maxWidth: 600)
           Spacer(minLength: 0)
         }
-          .componentPaddings
-
+        .componentPaddings
+        
         Markdown(SpiralOfFifthsAppStrings.enharmonicEquivalents)
-
+        
         RingView(ring: onboarding.cofRing)
           .frame(height: 320)
-
+        
         Markdown(SpiralOfFifthsAppStrings.diminishedSixth)
         
         HStack {

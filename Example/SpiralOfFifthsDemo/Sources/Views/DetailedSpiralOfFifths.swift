@@ -10,10 +10,16 @@ public final class DetailedSpiralOfFifths: ObservableObject {
   @Published public var spiralOfFifths: SpiralOfFifths
   public let modesTable: ModesTable
 
+  private var cancellables = Set<AnyCancellable>()
+
   public init(initialMode: Mode, notesSpiral: Spiral<Note>) {
     let spiralOfFifths = SpiralOfFifths(notesSpiral: notesSpiral, initialMode: initialMode)
     self.spiralOfFifths = spiralOfFifths
     self.modesTable = ModesTable(spiralOfFifths: spiralOfFifths)
+
+    spiralOfFifths.objectWillChange
+      .sink { [weak self] _ in self?.objectWillChange.send() }
+      .store(in: &cancellables)
   }
 }
 

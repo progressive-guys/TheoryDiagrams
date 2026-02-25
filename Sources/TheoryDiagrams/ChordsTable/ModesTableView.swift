@@ -10,7 +10,7 @@ public struct ModesTableView: View {
   var modesTable: ModesTable
   
   var segmentedControlSelectionColor: Color
-  
+
   public init(modesTable: ModesTable, segmentedControlSelectionColor: Color) {
     self.modesTable = modesTable
     self.segmentedControlSelectionColor = segmentedControlSelectionColor
@@ -19,29 +19,12 @@ public struct ModesTableView: View {
   public var body: some View {
     VStack(spacing: 0) {
       if modesTable.interactable {
-        CustomizableSegmentedControl(
+        SegmentedControl(
           selection: $modesTable.diagramType,
           options: ModesTable.DiagramType.allCases,
-          selectionView: {
-            segmentedControlSelectionColor
-              .animation(.linear)
-              .clipShape(RoundedRectangle(cornerRadius: 10))
-          },
-          segmentContent: { option, isPressed in
-            Text(option.title)
-              .font(.system(size: 10, weight: .semibold, design: .rounded))
-              .foregroundColor(isPressed ? .secondary : .primary)
-              .lineLimit(1)
-              .padding(.vertical, 2)
-              .frame(maxWidth: .infinity)
-          }
+          label: \.title,
+          selectionColor: segmentedControlSelectionColor
         )
-        .insets(.all, 4)
-        .segmentedControlContentStyle(.blendMode())
-        .segmentedControl(interSegmentSpacing: 2)
-        .segmentedControlSlidingAnimation(.bouncy)
-        .background(segmentedControlSelectionColor.opacity(0.5))
-        .clipShape(RoundedRectangle(cornerRadius: 14))
         .padding(.bottom, 4)
       }
 

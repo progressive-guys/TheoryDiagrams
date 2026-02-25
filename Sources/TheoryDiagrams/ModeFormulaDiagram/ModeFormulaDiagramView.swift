@@ -52,26 +52,12 @@ public struct ModeFormulaDiagramView: View {
   }
   
   private var selectControl: some View {
-    CustomizableSegmentedControl(
+    SegmentedControl(
       selection: $viewModel.selectedMode,
       options: viewModel.modes,
-      selectionView: {
-        Color.white.clipShape(RoundedRectangle(cornerRadius: 10))
-      },
-      segmentContent: { option, isPressed in
-        Text(option.shortName)
-          .font(.system(size: 10, weight: .semibold, design: .rounded))
-          .foregroundColor(isPressed ? .secondary : .primary)
-          .lineLimit(1)
-          .padding(.vertical, 4)
-          .frame(maxWidth: .infinity)
-      }
+      label: \.shortName,
+      selectionColor: .white.opacity(0.2),
+      backgroundColor: viewModel.noteColors[viewModel.selectedMode.root],
     )
-    .insets(.all, 4)
-    .segmentedControlContentStyle(.blendMode())
-    .segmentedControl(interSegmentSpacing: 2)
-    .segmentedControlSlidingAnimation(.bouncy)
-    .background(Color.clear)
-    .clipShape(RoundedRectangle(cornerRadius: 14))
   }
 }

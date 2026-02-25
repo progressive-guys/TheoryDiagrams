@@ -45,7 +45,7 @@ public struct SoFSettingsView: View {
     HStack {
       Spacer()
       
-      Link(destination: URL(string: "https://www.instagram.com/resonance.edtech")!) {
+      Link(destination: URL(string: "https://www.instagram.com/modality.fm")!) {
         Image("instagram", bundle: .main)
           .resizable()
           .frame(width: 32, height: 32)
@@ -53,7 +53,7 @@ public struct SoFSettingsView: View {
           .foregroundStyle(Color.white)
       }
       
-      Link(destination: URL(string: "https://t.me/ResonanceEdtech")!) {
+      Link(destination: URL(string: "https://t.me/ModalityFM")!) {
         Image("telegram", bundle: .main)
           .resizable()
           .frame(width: 32, height: 32)
