@@ -1,5 +1,11 @@
 # TheoryDiagrams
 
+![Version](https://img.shields.io/github/v/release/modality-lab/TheoryDiagrams)
+![Swift](https://img.shields.io/badge/Swift-5.9+-orange?logo=swift)
+![Platforms](https://img.shields.io/badge/Platforms-iOS%2016%20%7C%20macOS%2013%20%7C%20visionOS%201-blue)
+![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen)
+![License](https://img.shields.io/github/license/modality-lab/TheoryDiagrams)
+
 A SwiftUI library for interactive music theory diagrams, including the Spiral of Fifths visualization, chord tables, mode formula diagrams, and scale degree diagrams.
 
 ## Features

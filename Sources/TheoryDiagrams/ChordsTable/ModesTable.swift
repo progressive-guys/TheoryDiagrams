@@ -7,7 +7,7 @@ import SwiftMusicTheory
 @MainActor
 public final class ModesTable: ObservableObject {
   
-  public enum DiagramType: CaseIterable, Hashable, Identifiable {
+  public enum DiagramType: CaseIterable, Hashable, Identifiable, Sendable {
     case relativeModeChords
     case parallelModeChords
     case degrees
