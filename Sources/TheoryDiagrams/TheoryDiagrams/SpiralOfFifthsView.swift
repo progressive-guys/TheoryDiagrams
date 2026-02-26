@@ -3,7 +3,6 @@ import Combine
 import ModalityCore
 import ModalityDesign
 import SwiftMusicTheory
-import PopupView
 
 public struct SpiralOfFifthsView: View {
 
@@ -32,7 +31,7 @@ public struct SpiralOfFifthsView: View {
     .observeSize { size in
       fontScale = min(size.width, size.height) / Self.referenceSize
     }
-    .popup(isPresented: $spiralOfFifths.isNoteSelectionFloaterPresented) {
+    .toast(isPresented: $spiralOfFifths.isNoteSelectionFloaterPresented) {
       Text(SpiralOfFifthsStrings.accidentalSelectionError)
         .font(.system(size: 13, weight: .bold, design: .rounded))
         .foregroundStyle(.primary)
@@ -42,11 +41,6 @@ public struct SpiralOfFifthsView: View {
             .fill(spiralOfFifths.selectedNoteColor)
         }
         .shadow(radius: 8)
-    } customize: {
-      $0.autohideIn(3)
-        .type(.floater(verticalPadding: 0, horizontalPadding: 0, useSafeAreaInset: true))
-        .appearFrom(.topSlide)
-        .position(.top)
     }
   }
   

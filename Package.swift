@@ -11,7 +11,6 @@ let package = Package(
   dependencies: [
     .package(url: "https://github.com/modality-lab/SwiftMusicTheory.git", branch: "main"),
     .package(url: "https://github.com/modality-lab/ModalityCore.git", branch: "master"),
-    .package(url: "https://github.com/exyte/PopupView.git", from: "3.0.0"),
   ],
   targets: [
     .target(
@@ -20,7 +19,6 @@ let package = Package(
         "SwiftMusicTheory",
         .product(name: "ModalityCore", package: "ModalityCore"),
         .product(name: "ModalityDesign", package: "ModalityCore"),
-        .product(name: "PopupView", package: "PopupView"),
       ],
       resources: [.process("Resources")]
     ),
