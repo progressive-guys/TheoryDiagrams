@@ -15,7 +15,7 @@ public struct SpiralOfFifthsView: View {
   @State private var fontScale: CGFloat = 1.0
 
   public init(spiralOfFifths: SpiralOfFifths) {
-    self.spiralOfFifths = spiralOfFifths
+    self._spiralOfFifths = ObservedObject(wrappedValue: spiralOfFifths)
   }
 
   public var body: some View {

@@ -12,7 +12,7 @@ public struct ModesTableView: View {
   var segmentedControlSelectionColor: Color
 
   public init(modesTable: ModesTable, segmentedControlSelectionColor: Color) {
-    self.modesTable = modesTable
+    self._modesTable = ObservedObject(wrappedValue: modesTable)
     self.segmentedControlSelectionColor = segmentedControlSelectionColor
   }
   

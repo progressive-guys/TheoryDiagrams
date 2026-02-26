@@ -7,6 +7,7 @@ import ModalityDesign
 
 @MainActor
 public final class DetailedSpiralOfFifths: ObservableObject {
+  
   @Published public var spiralOfFifths: SpiralOfFifths
   public let modesTable: ModesTable
 
@@ -57,7 +58,6 @@ public struct DetailedSpiralOfFifthsView: View {
   
   private var settingsButton: some View {
     SettingsGearButton(
-      label: { Image(systemName: "gear") },
       settingsView: {
         SoFSettingsView(spiralOfFifths: viewModel.spiralOfFifths)
           .adaptableSheet

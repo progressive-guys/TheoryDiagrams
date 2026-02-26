@@ -10,7 +10,7 @@ public struct ModeFormulaDiagramView: View {
   var viewModel: ModeFormulaDiagram
   
   public init(viewModel: ModeFormulaDiagram) {
-    self.viewModel = viewModel
+    self._viewModel = ObservedObject(wrappedValue: viewModel)
   }
   
   public var body: some View {

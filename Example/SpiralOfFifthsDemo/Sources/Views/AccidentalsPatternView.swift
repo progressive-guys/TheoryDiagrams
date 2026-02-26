@@ -11,16 +11,16 @@ final class AccidentalsPattern: ObservableObject, Sendable {
   struct Raw: Identifiable {
     
     var id: Int { index }
-    
     let index: Int
     let notes: [Note]
   }
   
   let noteColors: NoteColors
   let startedNote = Note.f.flat(2)
-  @Published var selectedNote: Note
   let raws: [Raw]
   let colomnsCount = 7
+  
+  @Published var selectedNote: Note
   
   init(noteColors: NoteColors) {
     self.noteColors = noteColors
