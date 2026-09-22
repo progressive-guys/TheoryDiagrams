@@ -50,6 +50,18 @@ Then add to your target:
 )
 ```
 
+## Tuist
+
+Run from the module directory:
+
+```sh
+tuist generate --no-open
+```
+
+The local `TheoryDiagramsProjectDescription` plugin owns the targets and test groups. The main workspace reads these groups for its test schemes. The standalone projects use the package platform requirements, default Tuist build settings and remote Swift packages. The plugin defines dependencies for both build modes. The main repository supplies its build settings, source paths and `isStandalone: false`.
+
+For local signing, add `DEVELOPMENT_TEAM = your_team_id` to `Configuration/Signing.local.xcconfig`. Git ignores this file.
+
 ## Usage
 
 ```swift
@@ -76,21 +88,15 @@ The `Example/` folder contains a full demo application showcasing all diagram co
 
 ### Running the Example
 
-1. **Generate and open the project**:
+1. Generate the example:
 
    ```bash
    cd Example
-   tuist generate
+   tuist generate --no-open
    open SpiralOfFifthsDemo.xcworkspace
    ```
 
-2. **Set up code signing** (first time only):
-
-   - Open Xcode Preferences (Cmd+,)
-   - Go to Accounts tab → Add your Apple ID 
-   - Set this ID as Development Team in Signing&Capabilities
-
-3. Select your target platform and run
+2. Select your target platform and run.
 
 ## Dependencies
 
