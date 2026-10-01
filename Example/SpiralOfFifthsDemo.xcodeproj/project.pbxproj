@@ -7,23 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2EDA53F3A9ADEBCA550A64C4 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3B126660C8D5A635068B6496 /* MarkdownUI */; };
-		4C3FF3CD409CC2761389CD60 /* AccidentalsPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643F9C518076CABAFD76FB26 /* AccidentalsPatternView.swift */; };
-		5C726A2136136D2B3E7D2304 /* SpiralOfFifthsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925C4F8E4E185E28364DB971 /* SpiralOfFifthsApp.swift */; };
+		2B9FC4826B433557F9D934C1 /* SwiftMusicTheory.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 80BF87B757C23803919C6436 /* SwiftMusicTheory.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2F7442AC59D2561DFF230B56 /* TheoryDiagrams.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 903D00FDC459BE7CB01C7C05 /* TheoryDiagrams.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63FCEFFD3CC3CF38E94BFD0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F6D8C0890F8A388C4383E34 /* Assets.xcassets */; };
+		755AFA425E072F3B003BD5C8 /* ModalityCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 32CA2091992AED4CF9895FD5 /* ModalityCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		86759EEAE548742CF0C6D3CD /* NetworkImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE38393FA86B9AE5B0C7D399 /* NetworkImage.framework */; };
+		899A374420A89D2F71E31701 /* ModalityDesign.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 089618688AEAB0D7C566B33E /* ModalityDesign.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		89D4155D1CE48C37C135D183 /* TuistStrings+SpiralOfFifthsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5150B8EB83A38FEE8BE855FC /* TuistStrings+SpiralOfFifthsDemo.swift */; };
-		8CA60ACBCB6B06FEF6AC2BF9 /* SpiralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FAE574C422C0E73E8625F1 /* SpiralView.swift */; };
-		8FB32B05F2FFCBB03139CEFB /* SoFOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFFB5D13EF87AC74EEFC380 /* SoFOnboarding.swift */; };
+		92830EB19331D85485258501 /* ModalityDesign.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089618688AEAB0D7C566B33E /* ModalityDesign.framework */; };
 		945511402F28EFF3F6DDF12D /* TuistBundle+SpiralOfFifthsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96158ACC3998534B8AD3D0BE /* TuistBundle+SpiralOfFifthsDemo.swift */; };
-		9B47129313D71281CDEE5D2A /* ModalityDesign in Frameworks */ = {isa = PBXBuildFile; productRef = AFF381FD95C37300E08234AC /* ModalityDesign */; };
-		A4A0A2C1CE702EFF413A6022 /* DetailedSpiralOfFifths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C87B0756DBCA3D81C666051 /* DetailedSpiralOfFifths.swift */; };
-		A59D5D68FDF53B8C516F524C /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8009578E94598F8B022E940 /* NoteView.swift */; };
-		E3952A3A857D421D9E285E22 /* SpiralOfFifthsAppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C3F8FC9013EC5A3A802152 /* SpiralOfFifthsAppStrings.swift */; };
+		B3B1ADC91BFC3FBDFE2A5AD0 /* MarkdownUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A56CF7D2D4095AFC6993D2 /* MarkdownUI.framework */; };
+		C600E6310B152A7D43CFA506 /* TheoryDiagrams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 903D00FDC459BE7CB01C7C05 /* TheoryDiagrams.framework */; };
+		C7DD7E578F81A088FD8391AB /* NavigationBackport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68D3B171DBABC167DBBCE028 /* NavigationBackport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D2B6E588EE1774D8CD6B34BE /* ModalityCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CA2091992AED4CF9895FD5 /* ModalityCore.framework */; };
 		EE436E1733822CDFC50F96A3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 850445FF116FDD25D7705E4B /* Localizable.strings */; };
-		EF1D5D00D517423BF8286B40 /* SoFOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A91F12E7E9270461CE25AF4 /* SoFOnboardingView.swift */; };
-		F29E10D41EFF608756531FB6 /* SoFSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F53FDC360EB70E436AF36F /* SoFSettingsView.swift */; };
-		F806954B13BB9F892DBE3423 /* TheoryDiagrams in Frameworks */ = {isa = PBXBuildFile; productRef = 733763D911D898BFA3590ED4 /* TheoryDiagrams */; };
-		F955BFE65797BA6FAB49FCC3 /* ModalityCore in Frameworks */ = {isa = PBXBuildFile; productRef = 602076B69A502246C0CCDAA9 /* ModalityCore */; };
+		F4E4EEAB305D317FAAEEED61 /* cmark_gfm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B59E1D0D794E2F19A8FA744 /* cmark_gfm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +31,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				755AFA425E072F3B003BD5C8 /* ModalityCore.framework in Embed Frameworks */,
+				899A374420A89D2F71E31701 /* ModalityDesign.framework in Embed Frameworks */,
+				C7DD7E578F81A088FD8391AB /* NavigationBackport.framework in Embed Frameworks */,
+				2B9FC4826B433557F9D934C1 /* SwiftMusicTheory.framework in Embed Frameworks */,
+				2F7442AC59D2561DFF230B56 /* TheoryDiagrams.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,34 +43,47 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0C87B0756DBCA3D81C666051 /* DetailedSpiralOfFifths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedSpiralOfFifths.swift; sourceTree = "<group>"; };
+		089618688AEAB0D7C566B33E /* ModalityDesign.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ModalityDesign.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22A56CF7D2D4095AFC6993D2 /* MarkdownUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MarkdownUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E113A325F90A3AFDACD1A4 /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.xcconfig; sourceTree = "<group>"; };
+		32CA2091992AED4CF9895FD5 /* ModalityCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ModalityCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5150B8EB83A38FEE8BE855FC /* TuistStrings+SpiralOfFifthsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistStrings+SpiralOfFifthsDemo.swift"; sourceTree = "<group>"; };
-		643F9C518076CABAFD76FB26 /* AccidentalsPatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccidentalsPatternView.swift; sourceTree = "<group>"; };
+		5B59E1D0D794E2F19A8FA744 /* cmark_gfm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = cmark_gfm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68D3B171DBABC167DBBCE028 /* NavigationBackport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NavigationBackport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D09B67367966C63C508DB55 /* SpiralOfFifthsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiralOfFifthsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		75FAE574C422C0E73E8625F1 /* SpiralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiralView.swift; sourceTree = "<group>"; };
-		7A91F12E7E9270461CE25AF4 /* SoFOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoFOnboardingView.swift; sourceTree = "<group>"; };
+		80BF87B757C23803919C6436 /* SwiftMusicTheory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftMusicTheory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F6D8C0890F8A388C4383E34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		903D00FDC459BE7CB01C7C05 /* TheoryDiagrams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TheoryDiagrams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9104E0F5EAF5C827D95112D6 /* SpiralOfFifthsDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SpiralOfFifthsDemo-Info.plist"; sourceTree = "<group>"; };
-		925C4F8E4E185E28364DB971 /* SpiralOfFifthsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiralOfFifthsApp.swift; sourceTree = "<group>"; };
 		96158ACC3998534B8AD3D0BE /* TuistBundle+SpiralOfFifthsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+SpiralOfFifthsDemo.swift"; sourceTree = "<group>"; };
-		B8009578E94598F8B022E940 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
-		B9F1EB6B869CA215EBAC1F98 /* TheoryDiagrams */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TheoryDiagrams; path = ..; sourceTree = "<group>"; };
-		C0F53FDC360EB70E436AF36F /* SoFSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoFSettingsView.swift; sourceTree = "<group>"; };
 		D21560CC0BC5B85FCB28DB86 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E521BBF760AFFFD89DA35C1C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		EAFFB5D13EF87AC74EEFC380 /* SoFOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoFOnboarding.swift; sourceTree = "<group>"; };
-		F0C3F8FC9013EC5A3A802152 /* SpiralOfFifthsAppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiralOfFifthsAppStrings.swift; sourceTree = "<group>"; };
+		EE38393FA86B9AE5B0C7D399 /* NetworkImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		5358E36ABBA2A9FDAEEDC31C /* Sources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C5BCE6DB326BA38CC1180427 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F806954B13BB9F892DBE3423 /* TheoryDiagrams in Frameworks */,
-				F955BFE65797BA6FAB49FCC3 /* ModalityCore in Frameworks */,
-				9B47129313D71281CDEE5D2A /* ModalityDesign in Frameworks */,
-				2EDA53F3A9ADEBCA550A64C4 /* MarkdownUI in Frameworks */,
+				B3B1ADC91BFC3FBDFE2A5AD0 /* MarkdownUI.framework in Frameworks */,
+				D2B6E588EE1774D8CD6B34BE /* ModalityCore.framework in Frameworks */,
+				92830EB19331D85485258501 /* ModalityDesign.framework in Frameworks */,
+				86759EEAE548742CF0C6D3CD /* NetworkImage.framework in Frameworks */,
+				C600E6310B152A7D43CFA506 /* TheoryDiagrams.framework in Frameworks */,
+				F4E4EEAB305D317FAAEEED61 /* cmark_gfm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,20 +96,6 @@
 				850445FF116FDD25D7705E4B /* Localizable.strings */,
 			);
 			path = Localization;
-			sourceTree = "<group>";
-		};
-		0AC8D09CF9271D3ABAF78958 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				643F9C518076CABAFD76FB26 /* AccidentalsPatternView.swift */,
-				0C87B0756DBCA3D81C666051 /* DetailedSpiralOfFifths.swift */,
-				B8009578E94598F8B022E940 /* NoteView.swift */,
-				EAFFB5D13EF87AC74EEFC380 /* SoFOnboarding.swift */,
-				7A91F12E7E9270461CE25AF4 /* SoFOnboardingView.swift */,
-				C0F53FDC360EB70E436AF36F /* SoFSettingsView.swift */,
-				75FAE574C422C0E73E8625F1 /* SpiralView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		4197547A727EB0940EB2EFCB /* Derived */ = {
@@ -110,23 +112,40 @@
 			children = (
 				9A0536E090C7865158B57337 /* Products */,
 				80C177BD3D457538ADC72909 /* Project */,
-				B0707F315E57F1E9233265E4 /* Packages */,
 			);
 			sourceTree = "<group>";
 		};
 		80C177BD3D457538ADC72909 /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				8217D3A6DA3E54E1F6BD3AC3 /* Configuration */,
 				4197547A727EB0940EB2EFCB /* Derived */,
 				C32F5AC66D7AEC049DB5B89E /* SpiralOfFifthsDemo */,
 			);
 			name = Project;
 			sourceTree = "<group>";
 		};
+		8217D3A6DA3E54E1F6BD3AC3 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				25E113A325F90A3AFDACD1A4 /* Signing.xcconfig */,
+			);
+			name = Configuration;
+			path = ../Configuration;
+			sourceTree = "<group>";
+		};
 		9A0536E090C7865158B57337 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				5B59E1D0D794E2F19A8FA744 /* cmark_gfm.framework */,
+				22A56CF7D2D4095AFC6993D2 /* MarkdownUI.framework */,
+				32CA2091992AED4CF9895FD5 /* ModalityCore.framework */,
+				089618688AEAB0D7C566B33E /* ModalityDesign.framework */,
+				68D3B171DBABC167DBBCE028 /* NavigationBackport.framework */,
+				EE38393FA86B9AE5B0C7D399 /* NetworkImage.framework */,
 				6D09B67367966C63C508DB55 /* SpiralOfFifthsDemo.app */,
+				80BF87B757C23803919C6436 /* SwiftMusicTheory.framework */,
+				903D00FDC459BE7CB01C7C05 /* TheoryDiagrams.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,31 +167,13 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		B0707F315E57F1E9233265E4 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				B9F1EB6B869CA215EBAC1F98 /* TheoryDiagrams */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		C32F5AC66D7AEC049DB5B89E /* SpiralOfFifthsDemo */ = {
 			isa = PBXGroup;
 			children = (
 				F36163C8EA66FA614B8AB955 /* Resources */,
-				C7CA408AF8E067EAFDA0925A /* Sources */,
+				5358E36ABBA2A9FDAEEDC31C /* Sources */,
 			);
 			path = SpiralOfFifthsDemo;
-			sourceTree = "<group>";
-		};
-		C7CA408AF8E067EAFDA0925A /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				0AC8D09CF9271D3ABAF78958 /* Views */,
-				925C4F8E4E185E28364DB971 /* SpiralOfFifthsApp.swift */,
-				F0C3F8FC9013EC5A3A802152 /* SpiralOfFifthsAppStrings.swift */,
-			);
-			path = Sources;
 			sourceTree = "<group>";
 		};
 		F36163C8EA66FA614B8AB955 /* Resources */ = {
@@ -200,12 +201,11 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				5358E36ABBA2A9FDAEEDC31C /* Sources */,
+			);
 			name = SpiralOfFifthsDemo;
 			packageProductDependencies = (
-				733763D911D898BFA3590ED4 /* TheoryDiagrams */,
-				602076B69A502246C0CCDAA9 /* ModalityCore */,
-				AFF381FD95C37300E08234AC /* ModalityDesign */,
-				3B126660C8D5A635068B6496 /* MarkdownUI */,
 			);
 			productName = SpiralOfFifthsDemo;
 			productReference = 6D09B67367966C63C508DB55 /* SpiralOfFifthsDemo.app */;
@@ -232,10 +232,6 @@
 				ru,
 			);
 			mainGroup = 51A9CE5216654BC505F43FFC;
-			packageReferences = (
-				4A552E2A7F1571B3846E0D2A /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
-				9C88BE806A6333C0248844F7 /* XCLocalSwiftPackageReference ".." */,
-			);
 			productRefGroup = 9A0536E090C7865158B57337 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -264,15 +260,6 @@
 			files = (
 				945511402F28EFF3F6DDF12D /* TuistBundle+SpiralOfFifthsDemo.swift in Sources */,
 				89D4155D1CE48C37C135D183 /* TuistStrings+SpiralOfFifthsDemo.swift in Sources */,
-				5C726A2136136D2B3E7D2304 /* SpiralOfFifthsApp.swift in Sources */,
-				E3952A3A857D421D9E285E22 /* SpiralOfFifthsAppStrings.swift in Sources */,
-				4C3FF3CD409CC2761389CD60 /* AccidentalsPatternView.swift in Sources */,
-				A4A0A2C1CE702EFF413A6022 /* DetailedSpiralOfFifths.swift in Sources */,
-				A59D5D68FDF53B8C516F524C /* NoteView.swift in Sources */,
-				8FB32B05F2FFCBB03139CEFB /* SoFOnboarding.swift in Sources */,
-				EF1D5D00D517423BF8286B40 /* SoFOnboardingView.swift in Sources */,
-				F29E10D41EFF608756531FB6 /* SoFSettingsView.swift in Sources */,
-				8CA60ACBCB6B06FEF6AC2BF9 /* SpiralView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,20 +282,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=iphoneos*]" = AppIcon.iOS;
-				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=iphonesimulator*]" = AppIcon.iOS;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=iphone*]" = AppIcon.iOS;
 				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=macosx*]" = AppIcon.macOS;
-				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=xros*]" = AppIcon.solidimagestack;
-				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=xrsimulator*]" = AppIcon.solidimagestack;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=xr*]" = AppIcon.solidimagestack;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_ENTITLEMENTS[sdk=macosx*]" = SpiralOfFifthsDemo/Resources/Entitlements.macOS.entitlements;
+				"CODE_SIGN_ENTITLEMENTS[sdk=macosx*]" = ./SpiralOfFifthsDemo/Resources/Entitlements.macOS.entitlements;
 				ENABLE_PREVIEWS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../../../Tuist/.build/checkouts/swift-markdown-ui/Sources/cmark-gfm/include",
+				);
 				INFOPLIST_FILE = "Derived/InfoPlists/SpiralOfFifthsDemo-Info.plist";
-				"INFOPLIST_FILE[sdk=iphoneos*]" = SpiralOfFifthsDemo/Resources/Info.iOS.plist;
-				"INFOPLIST_FILE[sdk=iphonesimulator*]" = SpiralOfFifthsDemo/Resources/Info.iOS.plist;
-				"INFOPLIST_FILE[sdk=macosx*]" = SpiralOfFifthsDemo/Resources/Info.macOS.plist;
-				"INFOPLIST_FILE[sdk=xros*]" = SpiralOfFifthsDemo/Resources/Info.visionOS.plist;
-				"INFOPLIST_FILE[sdk=xrsimulator*]" = SpiralOfFifthsDemo/Resources/Info.visionOS.plist;
+				"INFOPLIST_FILE[sdk=iphone*]" = ./SpiralOfFifthsDemo/Resources/Info.iOS.plist;
+				"INFOPLIST_FILE[sdk=macosx*]" = ./SpiralOfFifthsDemo/Resources/Info.macOS.plist;
+				"INFOPLIST_FILE[sdk=xr*]" = ./SpiralOfFifthsDemo/Resources/Info.visionOS.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -319,6 +306,19 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-fmodule-map-file=\"$(SRCROOT)/Derived/ModuleMaps/SpiralOfFifthsDemo-deps.modulemap\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-L$(DT_TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+				);
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=\"$(SRCROOT)/Derived/ModuleMaps/SpiralOfFifthsDemo-deps.modulemap\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.modality-lab.SpiralOfFifthsDemo";
 				PRODUCT_NAME = SpiralOfFifthsDemo;
 				SDKROOT = auto;
@@ -332,8 +332,8 @@
 				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Debug;
 		};
@@ -341,20 +341,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=iphoneos*]" = AppIcon.iOS;
-				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=iphonesimulator*]" = AppIcon.iOS;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=iphone*]" = AppIcon.iOS;
 				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=macosx*]" = AppIcon.macOS;
-				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=xros*]" = AppIcon.solidimagestack;
-				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=xrsimulator*]" = AppIcon.solidimagestack;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=xr*]" = AppIcon.solidimagestack;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_ENTITLEMENTS[sdk=macosx*]" = SpiralOfFifthsDemo/Resources/Entitlements.macOS.entitlements;
+				"CODE_SIGN_ENTITLEMENTS[sdk=macosx*]" = ./SpiralOfFifthsDemo/Resources/Entitlements.macOS.entitlements;
 				ENABLE_PREVIEWS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../../../Tuist/.build/checkouts/swift-markdown-ui/Sources/cmark-gfm/include",
+				);
 				INFOPLIST_FILE = "Derived/InfoPlists/SpiralOfFifthsDemo-Info.plist";
-				"INFOPLIST_FILE[sdk=iphoneos*]" = SpiralOfFifthsDemo/Resources/Info.iOS.plist;
-				"INFOPLIST_FILE[sdk=iphonesimulator*]" = SpiralOfFifthsDemo/Resources/Info.iOS.plist;
-				"INFOPLIST_FILE[sdk=macosx*]" = SpiralOfFifthsDemo/Resources/Info.macOS.plist;
-				"INFOPLIST_FILE[sdk=xros*]" = SpiralOfFifthsDemo/Resources/Info.visionOS.plist;
-				"INFOPLIST_FILE[sdk=xrsimulator*]" = SpiralOfFifthsDemo/Resources/Info.visionOS.plist;
+				"INFOPLIST_FILE[sdk=iphone*]" = ./SpiralOfFifthsDemo/Resources/Info.iOS.plist;
+				"INFOPLIST_FILE[sdk=macosx*]" = ./SpiralOfFifthsDemo/Resources/Info.macOS.plist;
+				"INFOPLIST_FILE[sdk=xr*]" = ./SpiralOfFifthsDemo/Resources/Info.visionOS.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -365,6 +365,19 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-fmodule-map-file=\"$(SRCROOT)/Derived/ModuleMaps/SpiralOfFifthsDemo-deps.modulemap\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-L$(DT_TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+				);
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=\"$(SRCROOT)/Derived/ModuleMaps/SpiralOfFifthsDemo-deps.modulemap\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.modality-lab.SpiralOfFifthsDemo";
 				PRODUCT_NAME = SpiralOfFifthsDemo;
 				SDKROOT = auto;
@@ -374,13 +387,14 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Release;
 		};
 		71AA82806094D56D0F97BFF2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25E113A325F90A3AFDACD1A4 /* Signing.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -428,12 +442,15 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		847447CB8935D2D92FD4600B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25E113A325F90A3AFDACD1A4 /* Signing.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -488,6 +505,8 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -513,43 +532,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		9C88BE806A6333C0248844F7 /* XCLocalSwiftPackageReference ".." */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ..;
-		};
-/* End XCLocalSwiftPackageReference section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		4A552E2A7F1571B3846E0D2A /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
-			requirement = {
-				kind = exactVersion;
-				version = 2.4.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		3B126660C8D5A635068B6496 /* MarkdownUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = MarkdownUI;
-		};
-		602076B69A502246C0CCDAA9 /* ModalityCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = ModalityCore;
-		};
-		733763D911D898BFA3590ED4 /* TheoryDiagrams */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = TheoryDiagrams;
-		};
-		AFF381FD95C37300E08234AC /* ModalityDesign */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = ModalityDesign;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DA5B4954D03E2B7266FF01A9 /* Project object */;
 }
