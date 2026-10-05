@@ -20,8 +20,14 @@ let package = Package(
         .product(name: "ModalityCore", package: "ModalityCore"),
         .product(name: "ModalityDesign", package: "ModalityCore"),
       ],
+      path: "TheoryDiagrams",
+      sources: ["Sources"],
       resources: [.process("Resources")]
     ),
-    .testTarget(name: "TheoryDiagramsTests", dependencies: ["TheoryDiagrams"]),
+    .testTarget(
+      name: "TheoryDiagramsUnitTests",
+      dependencies: ["TheoryDiagrams"],
+      path: "UnitTests"
+    ),
   ]
 )
