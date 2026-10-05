@@ -52,15 +52,21 @@ Then add to your target:
 
 ## Tuist
 
-Run from the module directory:
+`Package.swift` owns the library and ordinary tests. `Example/Project.swift` owns the demo app. Run from the module directory:
 
 ```sh
-tuist generate --no-open
+mise install
+mise exec -- tuist install --path Example
+mise exec -- tuist generate --path Example --no-open
 ```
 
-The local `TheoryDiagramsProjectDescription` plugin owns the targets and test groups. The main workspace reads these groups for its test schemes. The standalone projects use the package platform requirements, default Tuist build settings and remote Swift packages. The plugin defines dependencies for both build modes. The main repository supplies its build settings, source paths and `isStandalone: false`.
+Open `TheoryDiagrams.xcworkspace`. `Package.swift` owns the library, resources, platforms, dependency requirements and unit tests. Tuist 4.210.0 imports the local package with `includeLocalPackageTestTargets`. `Example/Project.swift` adds the demo. The local plugin exports test and coverage names and the demo target. The workspace owns the package test scheme.
 
 For local signing, add `DEVELOPMENT_TEAM = your_team_id` to `Configuration/Signing.local.xcconfig`. Git ignores this file.
+
+The standalone checkout resolves SwiftMusicTheory and ModalityCore from their declared repositories. A Tuist consumer can select local checkouts in its own `Tuist/Package.swift` and use `.external(name: "TheoryDiagrams")`. Add local dependencies for the full library chain when editing it together. Keep each package identity; consumer-owned symbolic links can supply the expected directory names. A consumer that includes `Example/Project.swift` must also declare the demo-only MarkdownUI package.
+
+Development and tests need Swift 6 and the Metal toolchain. CI uses the latest stable Xcode on the macOS runner and the pinned Tuist version. It checks package resolution, unit tests in both build systems, the Release package build, Tuist generation and the macOS demo build.
 
 ## Usage
 
@@ -88,18 +94,10 @@ The `Example/` folder contains a full demo application showcasing all diagram co
 
 ### Running the Example
 
-1. Generate the example:
-
-   ```bash
-   cd Example
-   tuist generate --no-open
-   open SpiralOfFifthsDemo.xcworkspace
-   ```
-
-2. Select your target platform and run.
+Use the commands in [[README#Tuist]]. Select your target platform and run the `SpiralOfFifthsDemo` scheme.
 
 ## Dependencies
 
 - [SwiftMusicTheory](https://github.com/modality-lab/SwiftMusicTheory) - Music theory primitives
 - [ModalityCore](https://github.com/modality-lab/ModalityCore) - Core utilities and design components
-- [PopupView](https://github.com/exyte/PopupView) - Popup presentations
+- [MarkdownUI](https://github.com/gonzalezreal/swift-markdown-ui) - Demo content only
