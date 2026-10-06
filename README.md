@@ -1,5 +1,7 @@
 # TheoryDiagrams
 
+[![Tests](https://github.com/progressive-guys/TheoryDiagrams/actions/workflows/package-contract.yml/badge.svg?branch=master&event=push)](https://github.com/progressive-guys/TheoryDiagrams/actions/workflows/package-contract.yml)
+
 ![Version](https://img.shields.io/github/v/release/modality-lab/TheoryDiagrams)
 ![Swift](https://img.shields.io/badge/Swift-5.9+-orange?logo=swift)
 ![Platforms](https://img.shields.io/badge/Platforms-iOS%2016%20%7C%20macOS%2013%20%7C%20visionOS%201-blue)
