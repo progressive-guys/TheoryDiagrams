@@ -3,7 +3,7 @@
 [![Tests](https://github.com/progressive-guys/TheoryDiagrams/actions/workflows/package-contract.yml/badge.svg?branch=master&event=push)](https://github.com/progressive-guys/TheoryDiagrams/actions/workflows/package-contract.yml)
 
 ![Version](https://img.shields.io/github/v/release/modality-lab/TheoryDiagrams)
-![Swift](https://img.shields.io/badge/Swift-5.9+-orange?logo=swift)
+![Swift](https://img.shields.io/badge/Swift-6.0+-orange?logo=swift)
 ![Platforms](https://img.shields.io/badge/Platforms-iOS%2016%20%7C%20macOS%2013%20%7C%20visionOS%201-blue)
 ![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen)
 ![License](https://img.shields.io/github/license/modality-lab/TheoryDiagrams)
@@ -27,7 +27,7 @@ A SwiftUI library for interactive music theory diagrams, including the Spiral of
 - iOS 16.0+
 - macOS 13.0+
 - visionOS 1.0+
-- Swift 5.9+
+- Swift 6.0+
 
 ## Installation
 
@@ -68,7 +68,7 @@ For local signing, add `DEVELOPMENT_TEAM = your_team_id` to `Configuration/Signi
 
 The standalone checkout resolves SwiftMusicTheory and ModalityCore from their declared repositories. A Tuist consumer can select local checkouts in its own `Tuist/Package.swift` and use `.external(name: "TheoryDiagrams")`. Add local dependencies for the full library chain when editing it together. Keep each package identity; consumer-owned symbolic links can supply the expected directory names. A consumer that includes `Example/Project.swift` must also declare the demo-only MarkdownUI package.
 
-Development and tests need Swift 6 and the Metal toolchain. CI uses the latest stable Xcode on the macOS runner and the pinned Tuist version. It checks package resolution, unit tests in both build systems, the Release package build, Tuist generation and the macOS demo build.
+Development and tests need Swift 6.0 or later and the Metal toolchain. CI runs package resolution, unit tests and a Release package build with Xcode 16.2 (Swift 6.0), Xcode 16.3 (Swift 6.1) and the latest stable Xcode. The latest stable Xcode also runs the pinned Tuist version, workspace generation, unit tests and the macOS demo build.
 
 ## Usage
 

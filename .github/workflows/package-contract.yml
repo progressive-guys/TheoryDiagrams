@@ -10,19 +10,31 @@ permissions:
 
 jobs:
   package:
-    runs-on: macos-latest
+    name: Xcode ${{ matrix.xcode }}
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            xcode: "16.2"
+          - runner: macos-15
+            xcode: "16.3"
+          - runner: macos-latest
+            xcode: "latest-stable"
     steps:
       - uses: actions/checkout@v4
       - uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: latest-stable
+          xcode-version: ${{ matrix.xcode }}
       - uses: jdx/mise-action@v2
+        if: matrix.xcode == 'latest-stable'
       - name: Tool versions
         run: |
           xcodebuild -version
           swift --version
-          tuist version
       - name: Metal toolchain
+        if: matrix.xcode == 'latest-stable'
         run: xcodebuild -downloadComponent MetalToolchain
       - name: Package checks
         run: |
@@ -30,11 +42,15 @@ jobs:
           swift test
           swift build -c release
       - name: Tuist workspace
+        if: matrix.xcode == 'latest-stable'
         working-directory: Example
         run: |
+          tuist version
           tuist install
           tuist generate --no-open
       - name: Tuist unit tests
+        if: matrix.xcode == 'latest-stable'
         run: xcodebuild -workspace Example/SpiralOfFifthsDemo.xcworkspace -scheme TheoryDiagramsUnitTests -destination 'platform=macOS' CODE_SIGNING_ALLOWED=NO test
       - name: Demo build
+        if: matrix.xcode == 'latest-stable'
         run: xcodebuild -workspace Example/SpiralOfFifthsDemo.xcworkspace -scheme SpiralOfFifthsDemo -destination 'platform=macOS' CODE_SIGNING_ALLOWED=NO build
