@@ -62,7 +62,8 @@ public struct DetailedSpiralOfFifthsView: View {
         SoFSettingsView(spiralOfFifths: viewModel.spiralOfFifths)
           .adaptableSheet
           .background(Color.backgroundColor)
-      })
+      }
+    )
     .foregroundStyle(viewModel.spiralOfFifths.selectedNoteColor)
   }
 
@@ -156,5 +157,7 @@ fileprivate extension View {
 }
 
 #Preview {
-  DetailedSpiralOfFifthsView(viewModel: DetailedSpiralOfFifths(initialMode: Mode(root: .c, scale: .diatonic), notesSpiral: .withTripleAlterations))
+  DetailedSpiralOfFifthsView(
+    viewModel: DetailedSpiralOfFifths(initialMode: Mode(root: .c, scale: .diatonic), notesSpiral: .withTripleAlterations)
+  )
 }

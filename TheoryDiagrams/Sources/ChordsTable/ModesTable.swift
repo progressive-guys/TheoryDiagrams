@@ -92,7 +92,9 @@ public final class ModesTable: ObservableObject {
         cells: mode.notes.enumerated()
           .map { index, note in
             let degree = mode.scale.degrees[index]
-            guard let chord = mode.chords.first(where: { $0.root == note }) else { return Cell(scaleDegree: degree, cellType: .unknown, color: .clear) }
+            guard let chord = mode.chords.first(where: { $0.root == note }) else {
+              return Cell(scaleDegree: degree, cellType: .unknown, color: .clear)
+            }
 
             return Cell(
               scaleDegree: degree,
