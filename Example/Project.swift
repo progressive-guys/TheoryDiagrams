@@ -6,7 +6,8 @@ let project = Project(
   settings: .settings(
     base: [
       "SWIFT_VERSION": "6.0",
-      "SWIFT_STRICT_CONCURRENCY": "complete"
+      "SWIFT_STRICT_CONCURRENCY": "complete",
+      "STRING_CATALOG_GENERATE_SYMBOLS": "YES"
     ],
     configurations: [
       .debug(name: "Debug", xcconfig: "../Configuration/Signing.xcconfig"),
@@ -36,6 +37,7 @@ let project = Project(
         .external(name: "MarkdownUI")
       ],
       settings: .settings(base: [
+        "ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME": "",
         "INFOPLIST_FILE[sdk=macosx*]": "SpiralOfFifthsDemo/Resources/Info.macOS.plist",
         "INFOPLIST_FILE[sdk=iphone*]": "SpiralOfFifthsDemo/Resources/Info.iOS.plist",
         "INFOPLIST_FILE[sdk=xr*]": "SpiralOfFifthsDemo/Resources/Info.visionOS.plist",
