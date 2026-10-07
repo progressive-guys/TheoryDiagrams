@@ -57,7 +57,7 @@ public struct ModeFormulaDiagramView: View {
       options: viewModel.modes,
       label: \.shortName,
       selectionColor: .white.opacity(0.2),
-      backgroundColor: viewModel.noteColors[viewModel.selectedMode.root],
+      backgroundColor: viewModel.noteColors[viewModel.selectedMode.root]
     )
   }
 }
