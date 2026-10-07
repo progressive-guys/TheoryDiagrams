@@ -5,19 +5,19 @@ import ModalityDesign
 
 @MainActor
 final class SoFOnboarding {
-  
+
   let noteColors: NoteColors
-  
+
   init(noteColors: NoteColors) {
     self.noteColors = noteColors
   }
-  
+
   lazy var cSequence = Note.c.sequence(length: 14)
-  
+
   lazy var cSequenceBackwards = Note.c.sequence(length: 10, intervalToMove: .fourth())
-  
+
   lazy var fullSequence = Note.b.flat(2).sequence(length: 23)
-  
+
   lazy var cofRing = Ring<Note>(
     id: "CoFRing",
     wedges: Note.f.sequence(length: 12).enumerated().map { index, note in
@@ -32,9 +32,9 @@ final class SoFOnboarding {
     innerRadius: 0.2,
     height: 0.1
   )
-  
+
   lazy var accidentalsPattern = AccidentalsPattern(noteColors: noteColors)
-  
+
   lazy var spiralSequence = Note.f.flat(3).sequence(length: 49)
   lazy var spiralSelectedNoteIndex = spiralSequence.firstIndex(of: Note.c) ?? 0
   lazy var animatableSpiral = Ring<Note>(
@@ -76,7 +76,7 @@ final class SoFOnboarding {
     innerRadius: 0.2,
     height: 0.1
   )
-  
+
   lazy var eSequence = Note.e.sequence(length: 12)
   lazy var aSharpNotesCoF = Ring<Note>(
     id: "aSharpNotesCoF",
@@ -97,13 +97,13 @@ final class SoFOnboarding {
     innerRadius: 0.3,
     height: 0.15
   )
-  
+
   lazy var aSharpMajor = Mode(root: .a.sharp(), scale: .diatonic)
   lazy var aSharpDegreesCoF = Ring<String>(
     id: "aSharpDegreesCoF",
     wedges: eSequence.enumerated().compactMap { index, note in
       guard let degree = self.aSharpMajor.degree(under: note) else { return nil }
-      
+
       return Ring.Wedge(
         id: note.description,
         color: noteColors[note],
@@ -115,7 +115,7 @@ final class SoFOnboarding {
     innerRadius: 0.2,
     height: 0.1
   )
-  
+
   lazy var modeFormulaDiagram = ModeFormulaDiagram(
     mode: Mode(root: .c, scale: .diatonic),
     noteColors: noteColors

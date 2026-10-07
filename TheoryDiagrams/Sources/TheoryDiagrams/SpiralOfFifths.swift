@@ -7,7 +7,7 @@ import ModalityDesign
 
 @MainActor
 public final class SpiralOfFifths: ObservableObject {
-  
+
   @Published var isNoteSelectionFloaterPresented = false
 
   @Published private(set) var currentMode: Mode
@@ -22,10 +22,10 @@ public final class SpiralOfFifths: ObservableObject {
   @Published private var selectedModeIndex: Int = 0
 
   private var geometry: Geometry
-  
+
   var placeholders: [Placeholder] {
     let parallelModesCount = parallelModes.count
-    
+
     return parallelModes[0..<parallelModesCount - 1].enumerated().map { index, mode in
       Placeholder(
         color: parallelModeColor(for: mode).opacity(Double(parallelModesCount - index) / Double(parallelModesCount) * 0.7),
@@ -33,7 +33,7 @@ public final class SpiralOfFifths: ObservableObject {
       )
     }
   }
-  
+
   @Published public var sizeClass: UserInterfaceSizeClass {
     didSet {
       geometry = Geometry(modesCount: mainScale.degrees.count, sizeClass: sizeClass)
@@ -51,9 +51,9 @@ public final class SpiralOfFifths: ObservableObject {
   private func scaledModesFont(_ fontScale: CGFloat) -> Font {
     .system(size: max(6, 10 * fontScale), weight: .bold)
   }
-  
+
   public lazy var colors = NoteColors(spiral: notesSpiral)
-  
+
   func parallelModeColor(for mode: Mode) -> Color {
     colors[relativeModes.first(where: { $0.scale == mode.scale })!.root]
   }
@@ -61,7 +61,7 @@ public final class SpiralOfFifths: ObservableObject {
   var angles: [Note: Angle] {
     allNotes.enumerated().makeDictionary { noteIndex, note in (note, angle(for: noteIndex)) }
   }
-  
+
   var allNotes: [Note] { notesSpiral.elements }
 
   var displayedNotes: [Note] {
@@ -69,7 +69,7 @@ public final class SpiralOfFifths: ObservableObject {
     return notesSpiral
       .projection(from: firstNoteInModeIndex - stepsBack)
   }
-  
+
   var parallelModes: [Mode] {
     relativeModes.compactMap { $0.at(root: selectedNote) }
   }
@@ -95,11 +95,11 @@ public final class SpiralOfFifths: ObservableObject {
   }
 
   // MARK: - Public
-  
+
   public var selectedNote: Note {
     allNotes[selectedNoteIndex]
   }
-  
+
   public var selectedNoteColor: Color {
     colors[selectedNote]
   }
@@ -169,7 +169,7 @@ public final class SpiralOfFifths: ObservableObject {
       aspectRatio: geometry.aspectRatio
     )
   }
-  
+
   public func notesRing(fontScale: CGFloat) -> Ring<Note> {
     let displayedNotes = displayedNotes
     return Ring(
@@ -285,10 +285,10 @@ public final class SpiralOfFifths: ObservableObject {
       isNoteSelectionFloaterPresented = true
       return false
     }
-    
+
     self.currentMode = currentMode.at(root: note)
     self.selectedNoteIndex = allNotes.firstIndex(of: note)!
-    
+
     return true
   }
 
@@ -298,12 +298,12 @@ public final class SpiralOfFifths: ObservableObject {
     let firstNoteInMode = relativeModes.first?.root
     return allNotes.firstIndex { $0 == firstNoteInMode } ?? 0
   }
-  
+
   private var lastNoteInModeIndex: Int {
     let lastNoteInMode = relativeModes.last?.root
     return allNotes.firstIndex { $0 == lastNoteInMode } ?? 0
   }
-  
+
   private var modesCount: Int { relativeModes.count }
   private var relativeModesDistance: Int { lastNoteInModeIndex - firstNoteInModeIndex + 1 }
   private var foldingDiff: Int { Interval.octave().semitonesCount() - modesCount }

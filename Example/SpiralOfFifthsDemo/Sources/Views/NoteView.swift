@@ -4,10 +4,10 @@ import SwiftUI
 import SwiftMusicTheory
 
 struct NoteView: View {
-  
+
   let note: Note
   let noteColor: Color
-  
+
   var body: some View {
     RoundedRectangle(cornerRadius: 16)
       .fill(noteColor)

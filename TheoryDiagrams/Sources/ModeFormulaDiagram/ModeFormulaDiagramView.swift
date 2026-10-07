@@ -5,14 +5,14 @@ import Combine
 import ModalityDesign
 
 public struct ModeFormulaDiagramView: View {
-  
+
   @ObservedObject
   var viewModel: ModeFormulaDiagram
-  
+
   public init(viewModel: ModeFormulaDiagram) {
     self._viewModel = ObservedObject(wrappedValue: viewModel)
   }
-  
+
   public var body: some View {
     VStack {
       selectControl
@@ -24,7 +24,7 @@ public struct ModeFormulaDiagramView: View {
         .fill(viewModel.noteColors[viewModel.selectedMode.root])
     )
   }
-  
+
   private var pattern: some View {
     HStack(spacing: 0) {
       ForEach(viewModel.pattern) { pattern in
@@ -50,7 +50,7 @@ public struct ModeFormulaDiagramView: View {
       }
     }
   }
-  
+
   private var selectControl: some View {
     SegmentedControl(
       selection: $viewModel.selectedMode,

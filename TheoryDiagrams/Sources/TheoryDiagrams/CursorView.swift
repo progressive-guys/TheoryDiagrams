@@ -12,9 +12,9 @@ public struct CursorView: View {
     let scale: CGFloat
     let aspectRatio: CGFloat
   }
-  
+
   var cursor: Cursor
-  
+
   public var body: some View {
     GeometryReader { geometryProxy in
       WedgeShape(
@@ -36,7 +36,7 @@ public struct CursorView: View {
 }
 
 extension CursorView: @preconcurrency Animatable {
-  
+
   public var animatableData: AnimatablePair<Double, Double> {
     get {
       AnimatablePair(cursor.start.degrees, cursor.width.degrees)

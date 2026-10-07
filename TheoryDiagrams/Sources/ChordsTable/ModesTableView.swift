@@ -5,17 +5,17 @@ import SwiftMusicTheory
 import ModalityDesign
 
 public struct ModesTableView: View {
-  
+
   @ObservedObject
   var modesTable: ModesTable
-  
+
   var segmentedControlSelectionColor: Color
 
   public init(modesTable: ModesTable, segmentedControlSelectionColor: Color) {
     self._modesTable = ObservedObject(wrappedValue: modesTable)
     self.segmentedControlSelectionColor = segmentedControlSelectionColor
   }
-  
+
   public var body: some View {
     VStack(spacing: 0) {
       if modesTable.interactable {
@@ -35,7 +35,7 @@ public struct ModesTableView: View {
     }
     .frame(maxWidth: 640)
   }
-  
+
   fileprivate func rawView(_ raw: ModesTable.Raw) -> some View {
     HStack {
       Text(raw.mode.names.first ?? raw.mode.shortName)
@@ -43,7 +43,7 @@ public struct ModesTableView: View {
         .font(.system(size: 13, weight: .bold))
         .lineLimit(1)
         .frame(minWidth: 80, alignment: .leading)
-      
+
       ForEach(raw.cells) { cell in
         cellView(cell)
       }
@@ -56,7 +56,7 @@ public struct ModesTableView: View {
         .animation(.linear, value: raw.isSelected)
     }
   }
-  
+
   fileprivate func cellView(_ cell: ModesTable.Cell) -> some View {
     RoundedRectangle(cornerRadius: 6, style: .continuous)
       .fill(cell.color)
@@ -67,13 +67,13 @@ public struct ModesTableView: View {
           switch cell.cellType {
           case .chord(let chord):
             Text(chord.root.notation)
-              .font(.system(size: 11 ,weight: .bold))
+              .font(.system(size: 11, weight: .bold))
             Text(chord.triad.title)
               .lineLimit(1)
               .font(.system(size: 8, weight: .light))
           case .degree:
             Text(cell.scaleDegree.functionTitle)
-              .font(.system(size: 11 ,weight: .black))
+              .font(.system(size: 11, weight: .black))
           case .unknown:
             EmptyView()
           }

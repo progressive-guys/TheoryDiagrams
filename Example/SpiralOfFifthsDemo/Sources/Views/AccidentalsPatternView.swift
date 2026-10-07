@@ -7,27 +7,27 @@ import TheoryDiagrams
 
 @MainActor
 final class AccidentalsPattern: ObservableObject, Sendable {
-  
+
   struct Raw: Identifiable {
-    
+
     var id: Int { index }
     let index: Int
     let notes: [Note]
   }
-  
+
   let noteColors: NoteColors
   let startedNote = Note.f.flat(2)
   let raws: [Raw]
   let colomnsCount = 7
-  
+
   @Published var selectedNote: Note
-  
+
   init(noteColors: NoteColors) {
     self.noteColors = noteColors
     self.selectedNote = Note.f.flat(2)
     self.raws = Note.f.flat(2).sequence(length: 35).batched(by: colomnsCount).enumerated().map(Raw.init)
   }
-  
+
   func highligth() {
     Note.f.flat(2)
       .sequence(length: 13)
@@ -41,14 +41,14 @@ final class AccidentalsPattern: ObservableObject, Sendable {
 }
 
 struct AccidentalsPatternView: View {
-  
+
   @ObservedObject
   private var viewModel: AccidentalsPattern
-  
+
   init(viewModel: AccidentalsPattern) {
     self.viewModel = viewModel
   }
-  
+
   var body: some View {
     VStack(spacing: 8) {
       ForEach(viewModel.raws) { raw in
@@ -81,7 +81,7 @@ struct AccidentalsPatternView: View {
       RoundedRectangle(cornerRadius: 8).fill(gradient)
     }
   }
-  
+
   private var gradient: some ShapeStyle {
     LinearGradient(
       colors: [

@@ -5,15 +5,15 @@ import SwiftMusicTheory
 import TheoryDiagrams
 
 public struct SpiralView: View {
-  
+
   let ring: Ring<Note>
   let scrollProgress: Double
-  
+
   init(scrollProgress: Double, ring: Ring<Note>) {
     self.ring = ring
     self.scrollProgress = scrollProgress
   }
-  
+
   public var body: some View {
     GeometryReader { geometry in
       ZStack {

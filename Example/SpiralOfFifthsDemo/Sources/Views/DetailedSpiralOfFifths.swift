@@ -7,7 +7,7 @@ import ModalityDesign
 
 @MainActor
 public final class DetailedSpiralOfFifths: ObservableObject {
-  
+
   @Published public var spiralOfFifths: SpiralOfFifths
   public let modesTable: ModesTable
 
@@ -25,18 +25,18 @@ public final class DetailedSpiralOfFifths: ObservableObject {
 }
 
 public struct DetailedSpiralOfFifthsView: View {
-  
+
   @ObservedObject
   var viewModel: DetailedSpiralOfFifths
-  
+
   @Environment(\.horizontalSizeClass) var sizeClass: UserInterfaceSizeClass?
-  
+
   public init(
     viewModel: DetailedSpiralOfFifths
   ) {
     self.viewModel = viewModel
   }
-  
+
   @ViewBuilder
   private var infoButton: some View {
     WindowOpenableButton(
@@ -55,7 +55,7 @@ public struct DetailedSpiralOfFifthsView: View {
     }
     .buttonStyle(.plain)
   }
-  
+
   private var settingsButton: some View {
     SettingsGearButton(
       settingsView: {
@@ -65,9 +65,9 @@ public struct DetailedSpiralOfFifthsView: View {
       })
     .foregroundStyle(viewModel.spiralOfFifths.selectedNoteColor)
   }
-  
+
   @State var selectedTab = 0
-  
+
   public var body: some View {
     ZStack(alignment: .top) {
 #if os(macOS)
@@ -81,7 +81,7 @@ public struct DetailedSpiralOfFifthsView: View {
           }
           .toolbarBackground
           .tag(0)
-        
+
         onboardingView
           .tabItem {
             Image(systemName: "safari.fill")
@@ -107,16 +107,16 @@ public struct DetailedSpiralOfFifthsView: View {
 #endif
     }
   }
-  
+
   private var diagramsView: some View {
     VStack {
       SpiralOfFifthsView(spiralOfFifths: viewModel.spiralOfFifths)
         .layoutPriority(1)
-      
+
       Spacer()
-      
+
       Divider()
-      
+
       HStack {
         Spacer()
         ModesTableView(
@@ -125,7 +125,7 @@ public struct DetailedSpiralOfFifthsView: View {
         )
         Spacer()
       }
-      
+
     }
     .padding(.vertical, 16)
     .onAppear { viewModel.spiralOfFifths.sizeClass = sizeClass ?? .regular }
@@ -134,14 +134,14 @@ public struct DetailedSpiralOfFifthsView: View {
       Color.backgroundColor.ignoresSafeArea()
     }
   }
-  
+
   private var onboardingView: some View {
     SoFOnboardingView(noteColors: viewModel.spiralOfFifths.colors)
   }
 }
 
 fileprivate extension View {
-  
+
 #if os(iOS) || os(visionOS)
   @ViewBuilder
   var toolbarBackground: some View {

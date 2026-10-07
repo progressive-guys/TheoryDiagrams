@@ -43,7 +43,7 @@ public struct SpiralOfFifthsView: View {
         .shadow(radius: 8)
     }
   }
-  
+
   @ViewBuilder
   fileprivate var placeholders: some View {
     if spiralOfFifths.sizeClass == .regular {

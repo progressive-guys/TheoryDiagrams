@@ -6,34 +6,34 @@ import SwiftMusicTheory
 import TheoryDiagrams
 
 public struct SoFOnboardingView: View {
-  
+
   @State private var scrollOffset: CGFloat = 0
-  
+
   private var onboarding: SoFOnboarding
-  
+
   public init(noteColors: NoteColors) {
     self.onboarding = SoFOnboarding(noteColors: noteColors)
   }
-  
+
   public var body: some View {
     scrollView
   }
-  
+
   private var scrollView: some View {
     ScrollView(showsIndicators: false) {
       LazyVStack(alignment: .leading, spacing: 0) {
         Markdown(SpiralOfFifthsAppStrings.intro)
         notesView(for: onboarding.cSequence)
           .componentPaddings
-        
+
         Markdown(SpiralOfFifthsAppStrings.movingInFourths)
         notesView(for: onboarding.cSequenceBackwards)
           .componentPaddings
         Markdown(SpiralOfFifthsAppStrings.combiningSequences)
-        
+
         notesGradientView(for: onboarding.fullSequence)
           .componentPaddings
-        
+
         Markdown(SpiralOfFifthsAppStrings.identifyingPatterns)
         HStack {
           Spacer(minLength: 0)
@@ -42,14 +42,14 @@ public struct SoFOnboardingView: View {
           Spacer(minLength: 0)
         }
         .componentPaddings
-        
+
         Markdown(SpiralOfFifthsAppStrings.enharmonicEquivalents)
-        
+
         RingView(ring: onboarding.cofRing)
           .frame(height: 320)
-        
+
         Markdown(SpiralOfFifthsAppStrings.diminishedSixth)
-        
+
         HStack {
           Spacer(minLength: 0)
           GeometryReader { geometry in
@@ -62,9 +62,9 @@ public struct SoFOnboardingView: View {
           .frame(maxWidth: 400)
           Spacer(minLength: 0)
         }
-        
+
         Markdown(SpiralOfFifthsAppStrings.spiralDescription)
-        
+
         HStack {
           Spacer(minLength: 0)
           GeometryReader { geometry in
@@ -77,18 +77,18 @@ public struct SoFOnboardingView: View {
           .frame(maxWidth: 400)
           Spacer(minLength: 0)
         }
-        
+
         Markdown(SpiralOfFifthsAppStrings.spiralProjection)
-        
+
         ZStack {
           RingView(ring: onboarding.aSharpNotesCoF)
           RingView(ring: onboarding.aSharpDegreesCoF)
         }
         .frame(height: 384)
         .componentPaddings
-        
+
         Markdown(SpiralOfFifthsAppStrings.chords)
-        
+
         HStack {
           Spacer(minLength: 0)
           ModesTableView(
@@ -97,18 +97,18 @@ public struct SoFOnboardingView: View {
           )
           Spacer(minLength: 0)
         }.componentPaddings
-        
+
         Markdown(SpiralOfFifthsAppStrings.scaleAndModes)
-        
+
         HStack {
           Spacer(minLength: 0)
           ModeFormulaDiagramView(viewModel: onboarding.modeFormulaDiagram)
             .frame(maxWidth: 600)
           Spacer(minLength: 0)
         }.componentPaddings
-        
+
         Markdown(SpiralOfFifthsAppStrings.parallelModes)
-        
+
         HStack {
           Spacer(minLength: 0)
           ModesTableView(
@@ -117,7 +117,7 @@ public struct SoFOnboardingView: View {
           )
           Spacer(minLength: 0)
         }.componentPaddings
-        
+
         Markdown(SpiralOfFifthsAppStrings.chordDiagram)
       }
       .padding(16)
@@ -131,7 +131,7 @@ public struct SoFOnboardingView: View {
       Color.backgroundColor.ignoresSafeArea()
     }
   }
-  
+
   private func notesGradientView(for sequence: [Note]) -> some View {
     HStack(spacing: 0) {
       ForEach(sequence, id: \.description) { note in
@@ -155,7 +155,7 @@ public struct SoFOnboardingView: View {
         )
     }
   }
-  
+
   private func notesView(for sequence: [Note]) -> some View {
     HStack(spacing: 4) {
       ForEach(sequence, id: \.description) { note in
@@ -163,19 +163,19 @@ public struct SoFOnboardingView: View {
       }
     }
   }
-  
+
   private func calculateScrollProgress(in geometry: GeometryProxy) -> CGFloat {
     let minY = geometry.frame(in: .global).minY
     let screenHeight = geometry.frame(in: .global).height
     let spiralViewHeight = geometry.size.height
-    
+
     let startOffset = screenHeight - spiralViewHeight / 4
     let endOffset = -spiralViewHeight / 4
-    
+
     let scrollProgress: CGFloat = if minY > startOffset { 0.0 }
     else if minY <= endOffset { 1.0 }
     else { 1.0 - (minY - endOffset) / (startOffset - endOffset) }
-    
+
     return scrollProgress
   }
 }
