@@ -148,7 +148,7 @@ public struct SoFOnboardingView: View {
       RoundedRectangle(cornerRadius: 16)
         .fill(
           LinearGradient(
-            colors: [onboarding.noteColors[sequence.first!], onboarding.noteColors[sequence.last!]],
+            colors: [sequence.first.map { onboarding.noteColors[$0] } ?? .clear, sequence.last.map { onboarding.noteColors[$0] } ?? .clear],
             startPoint: .leading,
             endPoint: .trailing
           )

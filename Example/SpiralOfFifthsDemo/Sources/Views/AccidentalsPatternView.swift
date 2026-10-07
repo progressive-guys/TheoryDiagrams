@@ -85,8 +85,8 @@ struct AccidentalsPatternView: View {
   private var gradient: some ShapeStyle {
     LinearGradient(
       colors: [
-        viewModel.noteColors[viewModel.raws.first!.notes.first!],
-        viewModel.noteColors[viewModel.raws.last!.notes.last!]
+        viewModel.raws.first?.notes.first.map { viewModel.noteColors[$0] } ?? .clear,
+        viewModel.raws.last?.notes.last.map { viewModel.noteColors[$0] } ?? .clear
       ],
       startPoint: .top,
       endPoint: .bottom

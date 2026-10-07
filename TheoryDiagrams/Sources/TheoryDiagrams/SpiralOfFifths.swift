@@ -55,7 +55,7 @@ public final class SpiralOfFifths: ObservableObject {
   public lazy var colors = NoteColors(spiral: notesSpiral)
 
   func parallelModeColor(for mode: Mode) -> Color {
-    colors[relativeModes.first(where: { $0.scale == mode.scale })!.root]
+    relativeModes.first(where: { $0.scale == mode.scale }).map { colors[$0.root] } ?? .clear
   }
 
   var angles: [Note: Angle] {
@@ -145,9 +145,9 @@ public final class SpiralOfFifths: ObservableObject {
       id: "degreesRing",
       wedges: relativeModes
         .compactMap { relativeMode -> Ring<String>.Wedge? in
-          let degree = self.currentMode.degree(under: relativeMode.root)!
-          let angle = angles[relativeMode.root]!
-          let index = allNotes.firstIndex(of: relativeMode.root)!
+          guard let degree = self.currentMode.degree(under: relativeMode.root),
+                let angle = angles[relativeMode.root],
+                let index = allNotes.firstIndex(of: relativeMode.root) else { return nil }
 
           return Ring<String>.Wedge(
             id: "degree \(degree.function.number)",
@@ -204,7 +204,8 @@ public final class SpiralOfFifths: ObservableObject {
 
     return parallelModes
       .enumerated()
-      .map { (modeIndex, parallelMode) in
+      .compactMap { (modeIndex, parallelMode) -> Ring<Mode>? in
+        guard let angle = angles[parallelMode.root] else { return nil }
         let modeIndex = (modeIndex - selectedModeIndex + modesCount) % modesCount
 
         return Ring(
@@ -213,7 +214,7 @@ public final class SpiralOfFifths: ObservableObject {
             Ring<Mode>.Wedge(
               id: "Parallel \(parallelMode.shortName)",
               color: parallelModeColor(for: parallelMode),
-              start: angles[parallelMode.root]!,
+              start: angle,
               width: wedgesWidth,
               content: .init(
                 type: .circularLabel,
@@ -235,11 +236,12 @@ public final class SpiralOfFifths: ObservableObject {
   public func relativeModesRing(fontScale: CGFloat) -> Ring<Mode> {
     Ring(
       id: "relativeModesRing",
-      wedges: relativeModes.compactMap { mode in
-        Ring<Mode>.Wedge(
+      wedges: relativeModes.compactMap { mode -> Ring<Mode>.Wedge? in
+        guard let angle = angles[mode.root] else { return nil }
+        return Ring<Mode>.Wedge(
           id: mode.shortName,
           color: colors[mode.root],
-          start: angles[mode.root]!,
+          start: angle,
           width: wedgesWidth,
           content: .init(
             type: .circularLabel,
@@ -258,7 +260,8 @@ public final class SpiralOfFifths: ObservableObject {
   }
 
   public func parallelModeSelected(_ parallelMode: Mode) {
-    self.selectedModeIndex = parallelModes.firstIndex(where: { $0.scale == parallelMode.scale })!
+    guard let selectedModeIndex = parallelModes.firstIndex(where: { $0.scale == parallelMode.scale }) else { return }
+    self.selectedModeIndex = selectedModeIndex
     self.currentMode = parallelMode
   }
 
@@ -286,8 +289,9 @@ public final class SpiralOfFifths: ObservableObject {
       return false
     }
 
+    guard let selectedNoteIndex = allNotes.firstIndex(of: note) else { return false }
     self.currentMode = currentMode.at(root: note)
-    self.selectedNoteIndex = allNotes.firstIndex(of: note)!
+    self.selectedNoteIndex = selectedNoteIndex
 
     return true
   }
