@@ -34,19 +34,19 @@ public struct ModeFormulaDiagramView: View {
           Text(pattern.noteTitle)
             .font(.notesFont)
         }
-          .frame(maxWidth: .infinity)
-          .foregroundStyle(pattern.focused ? .primary : Color.primary.opacity(0.1))
-          .background {
-            if pattern.focused {
-              VStack {
-                Spacer()
-                Rectangle()
-                  .fill(Color.cursorColor.opacity(0.5))
-                  .frame(height: 2)
-              }
+        .frame(maxWidth: .infinity)
+        .foregroundStyle(pattern.focused ? .primary : Color.primary.opacity(0.1))
+        .background {
+          if pattern.focused {
+            VStack {
+              Spacer()
+              Rectangle()
+                .fill(Color.cursorColor.opacity(0.5))
+                .frame(height: 2)
             }
           }
-          .animation(.linear(duration: 0.3), value: pattern.focused)
+        }
+        .animation(.linear(duration: 0.3), value: pattern.focused)
       }
     }
   }

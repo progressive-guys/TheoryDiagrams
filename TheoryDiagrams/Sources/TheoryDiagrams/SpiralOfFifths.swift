@@ -28,7 +28,8 @@ public final class SpiralOfFifths: ObservableObject {
 
     return parallelModes[0..<parallelModesCount - 1].enumerated().map { index, mode in
       Placeholder(
-        color: parallelModeColor(for: mode).opacity(Double(parallelModesCount - index) / Double(parallelModesCount) * 0.7),
+        color: parallelModeColor(for: mode)
+          .opacity(Double(parallelModesCount - index) / Double(parallelModesCount) * 0.7),
         radius: geometry.modeOuterRadius(at: index)
       )
     }
@@ -145,9 +146,11 @@ public final class SpiralOfFifths: ObservableObject {
       id: "degreesRing",
       wedges: relativeModes
         .compactMap { relativeMode -> Ring<String>.Wedge? in
-          guard let degree = self.currentMode.degree(under: relativeMode.root),
-                let angle = angles[relativeMode.root],
-                let index = allNotes.firstIndex(of: relativeMode.root) else { return nil }
+          guard
+            let degree = self.currentMode.degree(under: relativeMode.root),
+            let angle = angles[relativeMode.root],
+            let index = allNotes.firstIndex(of: relativeMode.root)
+          else { return nil }
 
           return Ring<String>.Wedge(
             id: "degree \(degree.function.number)",
@@ -206,6 +209,7 @@ public final class SpiralOfFifths: ObservableObject {
       .enumerated()
       .compactMap { (modeIndex, parallelMode) -> Ring<Mode>? in
         guard let angle = angles[parallelMode.root] else { return nil }
+
         let modeIndex = (modeIndex - selectedModeIndex + modesCount) % modesCount
 
         return Ring(
@@ -238,6 +242,7 @@ public final class SpiralOfFifths: ObservableObject {
       id: "relativeModesRing",
       wedges: relativeModes.compactMap { mode -> Ring<Mode>.Wedge? in
         guard let angle = angles[mode.root] else { return nil }
+
         return Ring<Mode>.Wedge(
           id: mode.shortName,
           color: colors[mode.root],
@@ -261,6 +266,7 @@ public final class SpiralOfFifths: ObservableObject {
 
   public func parallelModeSelected(_ parallelMode: Mode) {
     guard let selectedModeIndex = parallelModes.firstIndex(where: { $0.scale == parallelMode.scale }) else { return }
+
     self.selectedModeIndex = selectedModeIndex
     self.currentMode = parallelMode
   }
@@ -290,6 +296,7 @@ public final class SpiralOfFifths: ObservableObject {
     }
 
     guard let selectedNoteIndex = allNotes.firstIndex(of: note) else { return false }
+
     self.currentMode = currentMode.at(root: note)
     self.selectedNoteIndex = selectedNoteIndex
 

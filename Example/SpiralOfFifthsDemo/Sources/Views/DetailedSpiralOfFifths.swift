@@ -71,9 +71,9 @@ public struct DetailedSpiralOfFifthsView: View {
 
   public var body: some View {
     ZStack(alignment: .top) {
-#if os(macOS)
+      #if os(macOS)
       diagramsView
-#else
+      #else
       TabView(selection: $selectedTab) {
         diagramsView
           .tabItem {
@@ -93,19 +93,19 @@ public struct DetailedSpiralOfFifthsView: View {
       }
       .colorScheme(.dark)
       .tint(viewModel.spiralOfFifths.selectedNoteColor)
-#endif
+      #endif
       HStack {
-#if os(macOS)
+        #if os(macOS)
         infoButton
-#endif
+        #endif
         Spacer()
         settingsButton
       }
       .opacity(selectedTab == 0 ? 1 : 0)
-#if os(iOS)
+      #if os(iOS)
       .animation(.linear, value: UIDevice.current.userInterfaceIdiom == .pad ? selectedTab : -1)
       .transition(.opacity)
-#endif
+      #endif
     }
   }
 
@@ -143,7 +143,7 @@ public struct DetailedSpiralOfFifthsView: View {
 
 fileprivate extension View {
 
-#if os(iOS) || os(visionOS)
+  #if os(iOS) || os(visionOS)
   @ViewBuilder
   var toolbarBackground: some View {
     if #available(iOS 16.0, *) {
@@ -153,11 +153,14 @@ fileprivate extension View {
       self
     }
   }
-#endif
+  #endif
 }
 
 #Preview {
   DetailedSpiralOfFifthsView(
-    viewModel: DetailedSpiralOfFifths(initialMode: Mode(root: .c, scale: .diatonic), notesSpiral: .withTripleAlterations)
+    viewModel: DetailedSpiralOfFifths(
+      initialMode: Mode(root: .c, scale: .diatonic),
+      notesSpiral: .withTripleAlterations
+    )
   )
 }

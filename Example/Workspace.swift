@@ -11,7 +11,10 @@ let workspace = Workspace(
       buildAction: .buildAction(targets: [tests]),
       testAction: .targets(
         [.testableTarget(target: tests)],
-        options: .options(coverage: true, codeCoverageTargets: [.project(path: "..", target: "TheoryDiagrams")])
+        options: .options(
+          coverage: true,
+          codeCoverageTargets: [.project(path: "..", target: "TheoryDiagrams")]
+        )
       )
     )
   ],

@@ -60,7 +60,9 @@ final class SoFOnboarding {
     wedges: spiralSequence.enumerated().map { index, note in
       Ring<Note>.Wedge(
         id: note.description,
-        color: spiralSequence[spiralEnharmonicsSelectedIndex].isEnharmonic(to: note) ? noteColors[.f.sharp()] : .gray,
+        color: spiralSequence[spiralEnharmonicsSelectedIndex].isEnharmonic(to: note)
+          ? noteColors[.f.sharp()]
+          : .gray,
         start: .degrees(-45 + 30 * Double(index)),
         width: .degrees(30),
         zIndex: Double(spiralSequence.count / 2 - index) / Double(spiralSequence.count),
@@ -109,7 +111,12 @@ final class SoFOnboarding {
         color: noteColors[note],
         start: .degrees(75 + 30 * Double(index)),
         width: .degrees(30),
-        content: .init(type: .label, containing: degree.functionTitle, font: .SoFNotesFont, text: degree.functionTitle)
+        content: .init(
+          type: .label,
+          containing: degree.functionTitle,
+          font: .SoFNotesFont,
+          text: degree.functionTitle
+        )
       )
     },
     innerRadius: 0.2,

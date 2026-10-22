@@ -4,7 +4,10 @@ import SwiftMusicTheory
 
 @main
 struct SpiralOfFifthsApp: App {
-  @StateObject var viewModel = DetailedSpiralOfFifths(initialMode: Mode(root: .c, scale: .diatonic), notesSpiral: .withTripleAlterations)
+  @StateObject var viewModel = DetailedSpiralOfFifths(
+    initialMode: Mode(root: .c, scale: .diatonic),
+    notesSpiral: .withTripleAlterations
+  )
 
   var body: some Scene {
     #if os(macOS)

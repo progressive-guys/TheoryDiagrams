@@ -112,7 +112,11 @@ public struct SoFOnboardingView: View {
         HStack {
           Spacer(minLength: 0)
           ModesTableView(
-            modesTable: ModesTable(spiralOfFifths: .cMajor, diagramType: .parallelModeChords, interactable: false),
+            modesTable: ModesTable(
+              spiralOfFifths: .cMajor,
+              diagramType: .parallelModeChords,
+              interactable: false
+            ),
             segmentedControlSelectionColor: onboarding.noteColors[.c]
           )
           Spacer(minLength: 0)
@@ -148,7 +152,10 @@ public struct SoFOnboardingView: View {
       RoundedRectangle(cornerRadius: 16)
         .fill(
           LinearGradient(
-            colors: [sequence.first.map { onboarding.noteColors[$0] } ?? .clear, sequence.last.map { onboarding.noteColors[$0] } ?? .clear],
+            colors: [
+              sequence.first.map { onboarding.noteColors[$0] } ?? .clear,
+              sequence.last.map { onboarding.noteColors[$0] } ?? .clear
+            ],
             startPoint: .leading,
             endPoint: .trailing
           )
@@ -186,8 +193,7 @@ public struct SoFOnboardingView: View {
 
 fileprivate extension View {
   var componentPaddings: some View {
-    self
-      .padding(.top, 16)
+    self.padding(.top, 16)
       .padding(.bottom, 32)
   }
 }

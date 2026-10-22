@@ -29,7 +29,9 @@ final class AccidentalsPattern: ObservableObject, Sendable {
   }
 
   func highligth() {
-    Note.f.flat(2)
+    Note
+      .f
+      .flat(2)
       .sequence(length: 13)
       .enumerated()
       .forEach { index, note in
