@@ -17,7 +17,9 @@ public final class ModesTable: ObservableObject {
     var title: String {
       switch self {
       case .degrees: return SpiralOfFifthsStrings.degrees
+
       case .parallelModeChords: return SpiralOfFifthsStrings.parallelModeChords
+
       case .relativeModeChords: return SpiralOfFifthsStrings.relativeModeChords
       }
     }
@@ -70,8 +72,10 @@ public final class ModesTable: ObservableObject {
     switch diagramType {
     case .parallelModeChords:
       spiralOfFifths.parallelModeSelected(mode)
+
     case .relativeModeChords:
       spiralOfFifths.relativeModeSelected(mode)
+
     case .degrees:
       break
     }
@@ -81,6 +85,7 @@ public final class ModesTable: ObservableObject {
     let modes = switch diagramType {
     case .relativeModeChords:
       spiralOfFifths.relativeModes
+
     case .parallelModeChords, .degrees:
       spiralOfFifths.parallelModes
     }
@@ -101,6 +106,7 @@ public final class ModesTable: ObservableObject {
               cellType: {
                 switch diagramType {
                 case .degrees: .degree
+
                 case .relativeModeChords, .parallelModeChords: .chord(chord)
                 }
               }(),

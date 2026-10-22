@@ -35,6 +35,7 @@ extension SpiralOfFifths {
         self.yShift = shiftedBy / 2
         self.scale = 1 / (1 - shiftedBy)
         self.aspectRatio = 1 / (notesOuterRadius * 2 + modesWedgesHeight * CGFloat(modesCount))
+
       case .regular: fallthrough @unknown default:
         self.yShift = 0
         self.scale = 1

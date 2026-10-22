@@ -48,7 +48,9 @@ fileprivate extension Interval {
     let semitones = semitonesCount()
     switch semitones {
     case 1: return "H"
+
     case 2: return "W"
+
     default:
       if semitones % 2 == 0 {
         return "\(Int(Double(semitones) / 2))W"

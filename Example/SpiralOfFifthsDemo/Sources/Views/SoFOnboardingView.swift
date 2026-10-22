@@ -172,9 +172,13 @@ public struct SoFOnboardingView: View {
     let startOffset = screenHeight - spiralViewHeight / 4
     let endOffset = -spiralViewHeight / 4
 
-    let scrollProgress: CGFloat = if minY > startOffset { 0.0 }
-    else if minY <= endOffset { 1.0 }
-    else { 1.0 - (minY - endOffset) / (startOffset - endOffset) }
+    let scrollProgress: CGFloat = if minY > startOffset {
+      0.0
+    } else if minY <= endOffset {
+      1.0
+    } else {
+      1.0 - (minY - endOffset) / (startOffset - endOffset)
+    }
 
     return scrollProgress
   }

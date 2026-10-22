@@ -327,6 +327,7 @@ public final class SpiralOfFifths: ObservableObject {
       switch sizeClass {
       case .compact:
         return -wedgesWidth * 0.5
+
       case .regular: fallthrough @unknown default:
         return wedgesWidth * (Double(offsetToCenter) - 0.5)
       }
@@ -336,6 +337,7 @@ public final class SpiralOfFifths: ObservableObject {
       switch sizeClass {
       case .compact:
         return wedgesWidth * Double(selectedNoteIndex)
+
       case .regular: fallthrough @unknown default:
         return Angle.zero
       }

@@ -71,9 +71,11 @@ public struct ModesTableView: View {
             Text(chord.triad.title)
               .lineLimit(1)
               .font(.system(size: 8, weight: .light))
+
           case .degree:
             Text(cell.scaleDegree.functionTitle)
               .font(.system(size: 11, weight: .black))
+
           case .unknown:
             EmptyView()
           }
