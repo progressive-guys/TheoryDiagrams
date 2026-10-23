@@ -8,7 +8,18 @@ final class SpiralTests {
   private let spiralOfFifths = Spiral<Note>.withTripleAlterations
 
   private let firstOctave = [
-    Note.f, .c, .g, .d, .a, .e, .b, .f.sharp(), .c.sharp(), .g.sharp(), .d.sharp(), .a.sharp()
+    Note.f,
+    .c,
+    .g,
+    .d,
+    .a,
+    .e,
+    .b,
+    .f.sharp(),
+    .c.sharp(),
+    .g.sharp(),
+    .d.sharp(),
+    .a.sharp()
   ].map { $0.flat(3) }
 
   @Test(arguments: 0..<38)

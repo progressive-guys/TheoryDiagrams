@@ -31,14 +31,36 @@ final class SpiralOfFifthsTests {
       cof.reversedProjection = false
       #expect(
         cof.displayedNotes.shifted(by: cof.offsetToCenter) == [
-          .c, .g, .d, .a, .e, .b, .f.sharp(), .c.sharp(), .g.sharp(), .d.sharp(), .a.sharp(), .f
+          .c,
+          .g,
+          .d,
+          .a,
+          .e,
+          .b,
+          .f.sharp(),
+          .c.sharp(),
+          .g.sharp(),
+          .d.sharp(),
+          .a.sharp(),
+          .f
         ]
       )
 
       cof.reversedProjection = true
       #expect(
         cof.displayedNotes.shifted(by: cof.offsetToCenter) == [
-          .c, .g, .d, .a, .e, .b, .g.flat(), .d.flat(), .a.flat(), .e.flat(), .b.flat(), .f
+          .c,
+          .g,
+          .d,
+          .a,
+          .e,
+          .b,
+          .g.flat(),
+          .d.flat(),
+          .a.flat(),
+          .e.flat(),
+          .b.flat(),
+          .f
         ]
       )
     }
