@@ -1,4 +1,5 @@
 import ProjectDescription
+import ModalityBuild
 
 let project = Project(
   name: "SpiralOfFifthsDemo",
@@ -30,10 +31,10 @@ let project = Project(
       ],
       buildableFolders: [.folder("SpiralOfFifthsDemo/Sources")],
       dependencies: [
-        .external(name: "TheoryDiagrams"),
-        .external(name: "SwiftMusicTheory"),
-        .external(name: "ModalityCore"),
-        .external(name: "ModalityDesign"),
+        .project(target: "TheoryDiagrams", path: ".."),
+        .library("SwiftMusicTheory"),
+        .library("ModalityCore"),
+        .library("ModalityDesign", package: "ModalityCore"),
         .external(name: "MarkdownUI")
       ],
       settings: .settings(base: [

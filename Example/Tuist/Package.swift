@@ -14,23 +14,21 @@ let packageSettings = PackageSettings(
   productTypes: [
     "SwiftMusicTheory": .framework,
     "ModalityCore": .framework,
-    "ModalityDesign": .framework,
-    "TheoryDiagrams": .framework
+    "ModalityDesign": .framework
   ],
   targetSettings: [
     "SwiftMusicTheory": testablePackageSettings,
     "ModalityCore": testablePackageSettings,
-    "ModalityDesign": testablePackageSettings,
-    "TheoryDiagrams": testablePackageSettings
-  ],
-  includeLocalPackageTestTargets: true
+    "ModalityDesign": testablePackageSettings
+  ]
 )
 #endif
 
 let package = Package(
   name: "SpiralOfFifthsDemo",
   dependencies: [
-    .package(path: "../.."),
+    .package(url: "https://github.com/modality-lab/SwiftMusicTheory.git", branch: "main"),
+    .package(url: "https://github.com/modality-lab/ModalityCore.git", branch: "master"),
     .package(url: "https://github.com/gonzalezreal/swift-markdown-ui", exact: "2.4.0")
   ]
 )

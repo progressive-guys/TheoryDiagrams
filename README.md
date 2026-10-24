@@ -54,21 +54,17 @@ Then add to your target:
 
 ## Tuist
 
-`Package.swift` owns the library and ordinary tests. `Example/Project.swift` owns the demo app. Run from the module directory:
+Use Xcode with Swift 6.4 or later and mise. From a standalone checkout:
 
 ```sh
 mise install
-mise exec -- tuist install --path Example
-mise exec -- tuist generate --path Example --no-open
+mise exec -- tuist install
+mise exec -- tuist generate --no-open
 ```
 
-Open `TheoryDiagrams.xcworkspace`. `Package.swift` owns the library, resources, platforms, dependency requirements and unit tests. Tuist 4.210.0 imports the local package with `includeLocalPackageTestTargets`. `Example/Project.swift` adds the demo. The local plugin exports test and coverage names and the demo target. The workspace owns the package test scheme.
+`Project.swift` declares the native library and test targets. Keep its sources, resources and dependencies consistent with `Package.swift`. The `ModalityBuild` plugin comes from `ModalityCore/SwiftStyle` and runs the shared checks before compilation. All consumers select the same fixed Git commit of the plugin.
 
-For local signing, add `DEVELOPMENT_TEAM = your_team_id` to `Configuration/Signing.local.xcconfig`. Git ignores this file.
-
-The standalone checkout resolves SwiftMusicTheory and ModalityCore from their declared repositories. A Tuist consumer can select local checkouts in its own `Tuist/Package.swift` and use `.external(name: "TheoryDiagrams")`. Add local dependencies for the full library chain when editing it together. Keep each package identity; consumer-owned symbolic links can supply the expected directory names. A consumer that includes `Example/Project.swift` must also declare the demo-only MarkdownUI package.
-
-Development and tests need Swift 6.0 or later and the Metal toolchain. CI runs package resolution, unit tests and a Release package build with Xcode 16.2 (Swift 6.0), Xcode 16.3 (Swift 6.1) and the latest stable Xcode. The latest stable Xcode also runs the pinned Tuist version, workspace generation, unit tests and the macOS demo build.
+Package products are the default dependencies. A consumer can set `TUIST_LOCAL_PROJECTS_ROOT` to select its directory of local projects. Standalone checkouts leave this option unset. SwiftPM remains available through `Package.swift`.
 
 ## Usage
 
