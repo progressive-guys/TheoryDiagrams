@@ -8,6 +8,7 @@ let project = Project(
     base: [
       "SWIFT_VERSION": "6.0",
       "SWIFT_STRICT_CONCURRENCY": "complete",
+      "ENABLE_USER_SCRIPT_SANDBOXING": "NO",
       "STRING_CATALOG_GENERATE_SYMBOLS": "YES"
     ],
     configurations: [
@@ -48,6 +49,7 @@ let project = Project(
         "ASSETCATALOG_COMPILER_APPICON_NAME[sdk=xr*]": "AppIcon.solidimagestack"
       ])
     )
+    .withLint(paths: ["SpiralOfFifthsDemo/Sources"])
   ],
   additionalFiles: [
     .glob(pattern: "Project.swift"),
