@@ -6,8 +6,7 @@ import ModalityDesign
 
 public struct ModesTableView: View {
 
-  @ObservedObject
-  var modesTable: ModesTable
+  @ObservedObject var modesTable: ModesTable
 
   var segmentedControlSelectionColor: Color
 

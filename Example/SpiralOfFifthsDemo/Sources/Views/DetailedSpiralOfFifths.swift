@@ -26,8 +26,7 @@ public final class DetailedSpiralOfFifths: ObservableObject {
 
 public struct DetailedSpiralOfFifthsView: View {
 
-  @ObservedObject
-  var viewModel: DetailedSpiralOfFifths
+  @ObservedObject var viewModel: DetailedSpiralOfFifths
 
   @Environment(\.horizontalSizeClass) var sizeClass: UserInterfaceSizeClass?
 

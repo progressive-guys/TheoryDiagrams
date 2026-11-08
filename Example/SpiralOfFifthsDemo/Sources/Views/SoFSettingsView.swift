@@ -6,8 +6,7 @@ import ModalityCore
 
 public struct SoFSettingsView: View {
 
-  @ObservedObject
-  var spiralOfFifths: SpiralOfFifths
+  @ObservedObject var spiralOfFifths: SpiralOfFifths
 
   @State private var isReversedProjectionHintShown = false
 

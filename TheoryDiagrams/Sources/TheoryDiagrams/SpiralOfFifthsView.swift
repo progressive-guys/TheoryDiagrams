@@ -8,8 +8,7 @@ public struct SpiralOfFifthsView: View {
 
   private static let referenceSize: CGFloat = 500
 
-  @ObservedObject
-  var spiralOfFifths: SpiralOfFifths
+  @ObservedObject var spiralOfFifths: SpiralOfFifths
 
   @State private var fontScale: CGFloat = 1.0
 

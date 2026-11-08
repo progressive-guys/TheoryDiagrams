@@ -44,8 +44,7 @@ final class AccidentalsPattern: ObservableObject, Sendable {
 
 struct AccidentalsPatternView: View {
 
-  @ObservedObject
-  private var viewModel: AccidentalsPattern
+  @ObservedObject private var viewModel: AccidentalsPattern
 
   init(viewModel: AccidentalsPattern) {
     self.viewModel = viewModel

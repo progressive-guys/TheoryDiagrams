@@ -6,8 +6,7 @@ import ModalityDesign
 
 public struct ModeFormulaDiagramView: View {
 
-  @ObservedObject
-  var viewModel: ModeFormulaDiagram
+  @ObservedObject var viewModel: ModeFormulaDiagram
 
   public init(viewModel: ModeFormulaDiagram) {
     self._viewModel = ObservedObject(wrappedValue: viewModel)
