@@ -130,7 +130,11 @@ public struct DetailedSpiralOfFifthsView: View {
     }
     .padding(.vertical, 16)
     .onAppear { viewModel.spiralOfFifths.sizeClass = sizeClass ?? .regular }
+    #if os(visionOS)
+    .onChange(of: sizeClass) { _, sizeClass in viewModel.spiralOfFifths.sizeClass = sizeClass ?? .regular }
+    #else
     .onChange(of: sizeClass) { viewModel.spiralOfFifths.sizeClass = $0 ?? .regular }
+    #endif
     .background {
       Color.backgroundColor.ignoresSafeArea()
     }

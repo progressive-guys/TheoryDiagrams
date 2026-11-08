@@ -16,7 +16,7 @@ private struct ToastModifier<ToastContent: View>: ViewModifier {
   @ViewBuilder let content: () -> ToastContent
 
   func body(content: Content) -> some View {
-    content
+    let toast = content
       .overlay(alignment: .top) {
         if isPresented {
           self.content()
@@ -24,13 +24,22 @@ private struct ToastModifier<ToastContent: View>: ViewModifier {
         }
       }
       .animation(.spring(response: 0.4, dampingFraction: 0.8), value: isPresented)
-      .onChange(of: isPresented) { presented in
-        if presented {
-          Task {
-            try? await Task.sleep(for: .seconds(duration))
-            await MainActor.run { isPresented = false }
-          }
-        }
+
+    #if os(visionOS)
+    toast.onChange(of: isPresented) { _, presented in
+      scheduleDismissal(presented)
+    }
+    #else
+    toast.onChange(of: isPresented, perform: scheduleDismissal)
+    #endif
+  }
+
+  private func scheduleDismissal(_ presented: Bool) {
+    if presented {
+      Task {
+        try? await Task.sleep(for: .seconds(duration))
+        await MainActor.run { isPresented = false }
       }
+    }
   }
 }
