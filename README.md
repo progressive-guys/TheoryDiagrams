@@ -62,7 +62,7 @@ mise exec -- tuist install
 mise exec -- tuist generate --no-open
 ```
 
-`Project.swift` declares the native library and test targets. Keep its sources, resources and dependencies consistent with `Package.swift`. The `ModalityBuild` plugin comes from `ModalityCore/SwiftStyle` and runs the shared checks before compilation. All consumers select the same fixed Git commit of the plugin.
+The local plugin `Tuist/Plugins/TheoryDiagramsBuild` declares the library and demo targets. Each `Project.swift` uses these targets and adds the shared checks from `ModalityBuild`. `TheoryDiagramsProjects.allCases` supplies the library and `Example/` projects to `Workspace.swift`. Consumers can import the same plugin to include all projects and targets. Keep sources, resources and dependencies consistent with `Package.swift`. The `ModalityBuild` plugin comes from `ModalityCore/SwiftStyle` at tag `1.1.1`.
 
 Package products are the default dependencies. A consumer can set `TUIST_LOCAL_PROJECTS_ROOT` to select its directory of local projects. Standalone checkouts leave this option unset. SwiftPM remains available through `Package.swift`.
 
